@@ -16,20 +16,6 @@ import PageTransaction from './pages/PageTransaction';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
-  useEffect(() => {
-    const handleStorageChange = () => {
-      setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
-    };
-
-    // Mengikat event listener untuk memantau perubahan di localStorage
-    window.addEventListener('storage', handleStorageChange);
-
-    // Membersihkan event listener saat komponen tidak digunakan lagi
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []);
-
   const PrivateRoute = () => {
     if (isLoggedIn) {
       return <Outlet />;
