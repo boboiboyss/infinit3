@@ -245,15 +245,15 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         <p className='mb-4 text-justify'>For identify verification purposes, we kindly request a photo of your government-issued ID. Please ensure that the ID provided mathces the one associated with your citizenship.</p>
                         <div className='w-full space-y-2'>
                             <p>Choose 1 of the following options</p>
-                            <div onClick={nextModalKYC6C} className='flex items-center justify-between p-4 rounded-xl w-full bg-white text-black'>
+                            <div onClick={nextModalKYC6C} className='flex items-center justify-between p-4 rounded-xl w-full bg-white text-black hover:cursor-pointer'>
                                 <p className=''>Driver License</p>
                                 <img  src={iconDropdown} alt='icon-dropdown' className='w-4 h-4 -rotate-90' />
                             </div>
-                            <div onClick={nextModalKYC6B} className='flex items-center justify-between p-4 rounded-xl w-full bg-white text-black'>
+                            <div onClick={nextModalKYC6B} className='flex items-center justify-between p-4 rounded-xl w-full bg-white text-black hover:cursor-pointer'>
                                 <p className=''>National ID</p>
                                 <img  src={iconDropdown} alt='icon-dropdown' className='w-4 h-4 -rotate-90' />
                             </div>
-                            <div onClick={nextModalKYC6A} className='flex items-center justify-between p-4 rounded-xl w-full bg-white text-black'>
+                            <div onClick={nextModalKYC6A} className='flex items-center justify-between p-4 rounded-xl w-full bg-white text-black hover:cursor-pointer'>
                                 <p className=''>Passport</p>
                                <img  src={iconDropdown} alt='icon-dropdown' className='w-4 h-4 -rotate-90' />
                             </div>

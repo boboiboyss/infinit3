@@ -2,9 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import logo from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
-import coin98 from '../../assets/coin-98.png'
 
-const ModalWalletConnected = ({ isOpen, onClose, openKYC}) => {
+const ModalWalletConnected = ({ isOpen, onClose, openKYC, wallet}) => {
   if (!isOpen) return null;
 
     const [isConnected, setIsConnected] = useState(false)
@@ -37,7 +36,7 @@ const ModalWalletConnected = ({ isOpen, onClose, openKYC}) => {
 
           <div className="w-2/3">
              <div className='border-b-[1px] border-black flex justify-between px-2'>
-                <h1 className='text-2xl font-bold my-3'>Connecting to Coin98 Wallet...</h1>
+                <h1 className='text-2xl font-bold my-3'>Connecting to {wallet?.name} Wallet...</h1>
                 <button
                 onClick={onClose}
                 className=" text-black hover:text-gray-600 focus:outline-none"
@@ -64,8 +63,8 @@ const ModalWalletConnected = ({ isOpen, onClose, openKYC}) => {
                     {
                         isConnected ? (
                              <div className=' m-10 flex flex-col space-y-6 items-center justify-center'>
-                                <img alt={`wallet-coin`} className=" w-36 mx-auto h-36 rounded-full object-cover" src={coin98}  />
-                                <p>Successfully Connected to Coin98 Wallet</p>
+                                <img alt={wallet?.name} className=" w-36 mx-auto h-36 rounded-full object-cover" src={wallet?.image}  />
+                                <p>Successfully Connected to {wallet?.name} Wallet</p>
 
                                 <span className='text-sm'>You can view your list of wallets in the <Link to={'/address-book'} className='text-black no-underline font-bold'>Address Book</Link> menu or here</span>
                                 <button 
@@ -81,9 +80,9 @@ const ModalWalletConnected = ({ isOpen, onClose, openKYC}) => {
                         ) : (
                               <div className='w-full bg-white p-3 rounded-xl border border-black'>
                                 <div className='flex items-center space-x-3'>
-                                    <img src={coin98} alt='coin-98' className='h-20 w-20 rounded-full object-cover' /> 
+                                    <img src={wallet?.image} alt={wallet?.name} className='h-20 w-20 rounded-full object-cover' /> 
                                     <div className='flex flex-col justify-center space-y-1'>
-                                        <p className='font-bold text-lg'>Connecting to Coin98 Wallet...</p>
+                                        <p className='font-bold text-lg'>Connecting to {wallet?.name} Wallet...</p>
                                         <p>Make sure to select all accounts that you want to grant access to.</p>
                                     </div>
                                 </div>

@@ -11,6 +11,8 @@ const [isModal, setIsmodal] = useState(false);
 const [isModalWalletConnectedOpen, setIsModalWalletConnectedOpen] = useState(false);
 const [isModalKYC, setIsModalKYC] = useState(false)
 const [isModalTerms, setIsModalTerms] = useState(false)
+const [selectedWallet, setSelectedWallet] = useState(null);
+
 const navigate = useNavigate();
 
  useEffect(() => {
@@ -170,9 +172,9 @@ const navigate = useNavigate();
             </div>
         </div>
 
-        <ModalWallet isOpen={isModal} onClose={closeModal} openWalletConnected={openModalWalletConnected}/>
+        <ModalWallet isOpen={isModal} onClose={closeModal} openWalletConnected={openModalWalletConnected} setSelectedWallet={setSelectedWallet}/>
 
-        <ModalWalletConnected isOpen={isModalWalletConnectedOpen} onClose={closeModalWalletConnected} openKYC={() => setIsModalKYC(true)} />
+        <ModalWalletConnected isOpen={isModalWalletConnectedOpen} onClose={closeModalWalletConnected} openKYC={() => setIsModalKYC(true)} wallet={selectedWallet} />
 
         <ModalKYC isOpen={isModalKYC} onClose={closeModalKYC} openModalTerms={setIsModalTerms} />
         <ModalTerms isOpen={isModalTerms} onClose={closeModalTerms} />

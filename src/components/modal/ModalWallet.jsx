@@ -9,13 +9,23 @@ import defi from '../../assets/defiwallet.png';
 import wallet from '../../assets/walletconnect.png';
 import bitget from '../../assets/bitget.png';
 
-const ModalWallet = ({ isOpen, onClose, openWalletConnected }) => {
+const ModalWallet = ({ isOpen, onClose, openWalletConnected, setSelectedWallet }) => {
   if (!isOpen) return null;
 
- const handleWalletClick = () => {
-    openWalletConnected();
+ const handleWalletClick = (wallet) => {
+     openWalletConnected();
+     setSelectedWallet(wallet)
     onClose(); 
   };
+
+   const wallets = [
+    { id : 1, name: "Metamask", image: metamask },
+    { id : 2, name: "OKX Wallet", image: okx },
+    { id : 3, name: "Coin98 Wallet", image: coin98 },
+    { id : 4, name: "DeFi Wallet", image: defi },
+    { id : 5, name: "WalletConnect", image: wallet },
+    { id : 6, name: "Bitget Wallet", image: bitget },
+  ];
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -62,18 +72,21 @@ const ModalWallet = ({ isOpen, onClose, openWalletConnected }) => {
              </div>
 
              <div className='content grid grid-cols-2 gap-4 p-4'>
-                {[...Array(6)].map((_, index) => (
-                  
-                  <button key={index} onClick={handleWalletClick}>
-                    <div className='p-5 border border-black rounded-xl bg-white flex items-center space-x-2'>
+                {wallets.map((wallet, index) => (
+                <button key={index} onClick={() => handleWalletClick({
+                    id: wallet.id,
+                    name:wallet.name,
+                    image:wallet.image
+                })}>
+                  <div className="p-5 border border-black rounded-xl bg-white flex items-center space-x-2">
                     <img
-                     src={metamask}
-                    alt={`Wallet ${index + 1}`}
-                    className="w-16 h-16"
+                      src={wallet.image}
+                      alt={wallet.name}
+                      className="w-16 h-16 object-cover rounded-full"
                     />
-                    <span>Metamask</span>
-                </div>
-                  </button>
+                    <span>{wallet.name}</span>
+                  </div>
+                </button>
               ))}
              </div>
           </div>

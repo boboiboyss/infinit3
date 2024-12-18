@@ -19,7 +19,7 @@ const handleContinueWithGoogle = (event) => {
     <div className="flex flex-col min-h-screen">
       <header className='p-8'>
         <div className="">
-         <Link to={'/'}>
+         <Link to={'/home'}>
           <img src={logo} alt="Logo" className="h-16" />
           </Link>
         </div>

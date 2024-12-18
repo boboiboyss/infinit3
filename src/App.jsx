@@ -28,9 +28,8 @@ function App() {
           <Route path="documents" element={<PageDocuments />} />
           <Route path="account-settings" element={<PageAccountSettings />} />
           <Route path="contact-support" element={<PageContactSupport />} />
-          {/* <Route path="modal" element={<WalletModal />} /> */}
           <Route path="portofolio" element={<PagePortofolio />} />
-          <Route path='transaction' element={<PageTransaction />} />
+          <Route path="transaction" element={<PageTransaction />} />
         </Route>
 
          <Route path='/product-buy' element={<PageProductBuy />} />
