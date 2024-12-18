@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import PageLogin from './pages/PageLogin';
 import PageCheckEmail from './pages/PageCheckEmail';
@@ -14,16 +14,27 @@ import PagePortofolio from './pages/PagePortofolio';
 import PageTransaction from './pages/PageTransaction';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
+    };
 
-  // Komponen PrivateRoute untuk melindungi halaman
-   const PrivateRoute = () => {
-    // Jika sudah login, redirect ke home (atau halaman yang diinginkan)
+    // Mengikat event listener untuk memantau perubahan di localStorage
+    window.addEventListener('storage', handleStorageChange);
+
+    // Membersihkan event listener saat komponen tidak digunakan lagi
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
+  const PrivateRoute = () => {
     if (isLoggedIn) {
       return <Outlet />;
     }
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace />;
   };
 
   return (
@@ -32,10 +43,8 @@ function App() {
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <PageLogin />} />
         <Route path="/check-email" element={isLoggedIn ? <Navigate to="/" /> : <PageCheckEmail />} />
 
-        {/* Route yang dilindungi */}
-        <Route path="/" element={<RootLayout />}>
-          {/* Semua route di bawah ini dilindungi oleh PrivateRoute */}
-          <Route element={<PrivateRoute />}>
+        <Route element={<PrivateRoute />}>
+          <Route path="/" element={<RootLayout />}>
             <Route index element={<PageHome />} />
             <Route path="home" element={<PageHome />} />
             <Route path="address-book" element={<PageAddressBook />} />
@@ -46,10 +55,8 @@ function App() {
             <Route path="portofolio" element={<PagePortofolio />} />
             <Route path="transaction" element={<PageTransaction />} />
           </Route>
+          <Route path='/product-buy' element={<PageProductBuy />} />
         </Route>
-
-        {/* Route yang tidak dilindungi */}
-        <Route path='/product-buy' element={<PageProductBuy />} />
       </Routes>
     </Router>
   );

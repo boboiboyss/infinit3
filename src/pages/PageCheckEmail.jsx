@@ -11,7 +11,7 @@ function PageCheckEmail() {
     <div className="flex flex-col min-h-screen">
       <header className="bg-white p-6 mx-10">
         <div className="container">
-          <Link to={'/home'}>
+          <Link to={'/'}>
             <img src={logo} alt="Logo" className="h-16" />
           </Link>
         </div>

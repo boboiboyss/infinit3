@@ -1,29 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from '../assets/logo.png';
-import { useNavigate, Link} from 'react-router-dom';
+import { useNavigate, Link, Navigate} from 'react-router-dom';
 
 function PageLogin() {
 const navigate = useNavigate();
 
-const handleContinue = (event) => {
-    event.preventDefault();
-    
-    localStorage.setItem('isLoggedIn', 'true');
-    navigate('/check-email');
-}
+    const handleContinue = (event) => {
+        // event.preventDefault();
+        
+        localStorage.setItem('isLoggedIn', 'true');
+        navigate('/check-email');
+    }
 
-const handleContinueWithGoogle = (event) => {
-    event.preventDefault();
+    const handleContinueWithGoogle = (event) => {
+        // event.preventDefault();
 
-    localStorage.setItem('isLoggedIn', 'true')
-    navigate('/home');
-}
+        localStorage.setItem('isLoggedIn', 'true')
+        navigate('/');
+    }
 
   return (
     <div className="flex flex-col min-h-screen">
       <header className='p-8'>
         <div className="">
-         <Link to={'/home'}>
+         <Link to={'/'}>
           <img src={logo} alt="Logo" className="h-16" />
           </Link>
         </div>
@@ -67,7 +67,7 @@ const handleContinueWithGoogle = (event) => {
 
             <div>
               <button
-                type="button"
+                type="submit"
                 onClick={handleContinueWithGoogle}
                 className="w-full bg-black text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline flex items-center justify-center font-semibold"
               >

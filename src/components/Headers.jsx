@@ -6,7 +6,7 @@ export default function Headers() {
       <header className="bg-white">
         <div className="flex items-center justify-between">
           <div className='flex items-center justify-center gap-x-10'>
-            <Link to={'/login'}>
+            <Link to={'/'}>
                 <img src={logo} alt="Logo" className="h-16" />
             </Link>
 {/* 
