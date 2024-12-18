@@ -22,6 +22,7 @@ function App() {
         <Route path="/check-email" element={<PageCheckEmail />} />
 
          <Route path="/" element={<RootLayout />}>
+         <Route index element={<PageHome />} />
           <Route path="home" element={<PageHome />} />
           <Route path="address-book" element={<PageAddressBook />} />
           <Route path="bank-details" element={<PageBankDetails />} />

@@ -28,7 +28,8 @@ export default function Sidebar() {
             to="/home"
             className={`flex items-center gap-3 rounded-xl py-3 ${
               location.pathname === "/home"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
+                ? "bg-[#C5D2F7] text-primary pl-6 mr-3" :  location.pathname === "/"
+                ? "bg-[#C5D2F7] text-primary pl-6 mr-3" 
                 : "text-muted-foreground"
             } transition-all hover:text-primary`}
           >

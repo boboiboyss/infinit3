@@ -16,7 +16,9 @@ const [selectedWallet, setSelectedWallet] = useState(null);
 const navigate = useNavigate();
 
  useEffect(() => {
-    setIsmodal(true);
+    setTimeout(() => {
+        setIsmodal(true);
+    }, 1000)
 
  }, [])
 
