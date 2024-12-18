@@ -26,8 +26,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <PageLogin />} />
-        <Route path="/check-email" element={isLoggedIn ? <Navigate to="/" /> : <PageCheckEmail />} />
+        <Route path="/login" element={isLoggedIn ? <Navigate to="/home" replace/> : <PageLogin />} />
+        <Route path="/check-email" element={isLoggedIn ? <Navigate to="/home" replace /> : <PageCheckEmail />} />
 
         <Route element={<PrivateRoute />}>
           <Route path="/" element={<RootLayout />}>
