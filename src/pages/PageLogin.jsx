@@ -7,11 +7,15 @@ const navigate = useNavigate();
 
 const handleContinue = (event) => {
     event.preventDefault();
+    
+    localStorage.setItem('isLoggedIn', 'true');
     navigate('/check-email');
 }
 
 const handleContinueWithGoogle = (event) => {
     event.preventDefault();
+
+    localStorage.setItem('isLoggedIn', 'true')
     navigate('/home');
 }
 
