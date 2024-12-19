@@ -177,7 +177,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                   action=="modalKYC3" && (
                    <div className='h-full flex flex-col'>
-                      <h1 className='font-bold text-lg mb-4 text-justify'>Please select the country of your citizenship that matches the goverment-issued ID you intend to provide</h1>
+                      <h1 className='font-bold text-xl mb-4 text-justify'>Please select the country of your citizenship that matches the goverment-issued ID you intend to provide</h1>
                         <div class="relative w-full rounded-xl mb-6">
                             <p className=' text-justify'>In the next step, you will be required to upload a government-issue ID from your country of citizenship. Ensure that the ID matches your current nationally.</p>
                             <select

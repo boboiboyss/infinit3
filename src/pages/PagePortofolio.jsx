@@ -25,7 +25,7 @@ export default function PagePortofolio() {
                         <p>Current Balance</p>
                         <p className="text-3xl font-semibold">$100,000.00</p>
                         <div className="flex items-center space-x-2">
-                           <p className={time === "24h" ? "text-[#79EA86]" : "text-[#e75757]"}>+$200.00 (20%)</p>
+                           <p className={time === "24h" ? "text-[#79EA86]" : "text-[#e75757]"}>{time === '24h' ? "+$200.00 (20%)" : "-$200.00 (20%)"}</p>
                             <p className="bg-[#E9ECEF] text-black p-[3px] rounded-md">{time}</p>
                         </div>
                     </div>

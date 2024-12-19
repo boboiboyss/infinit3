@@ -16,7 +16,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
    const nextModalTerms5 = () => setAction('modalTerms5');
    const nextModalTerms6 = () => setAction('modalTerms6');
    const closeModal = () => onClose();
-   
+
    const handleCheckboxChange = (event) => {
     setCek(event.target.checked);
    };
@@ -53,7 +53,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                 {
                     action == "modalTerms1" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4 text-lg text-justify'>Asset tokenization must comply with the laws and regulations applicable in the relevant jurisdiction. Asset owners must adhere to legal frameworks governing securities, digital assets, and investor protection</p>
+                            <p className='mb-4 text-justify'>Asset tokenization must comply with the laws and regulations applicable in the relevant jurisdiction. Asset owners must adhere to legal frameworks governing securities, digital assets, and investor protection</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
                                 <span>The owner must ensure that the asset being tokenized has a clear legal status and is free from disputes, cush as liens, third-party claims, or ownership issues.</span>
@@ -71,7 +71,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                 {
                     action == "modalTerms2" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4 text-lg'>The party conducting tokenization must prove lawful ownership of the asset or process the legal authority to tokenize it.</p>
+                            <p className='mb-4'>The party conducting tokenization must prove lawful ownership of the asset or process the legal authority to tokenize it.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
                                 <span>Ownership documents, such as property deeds, stock certificates, or vehicle registration, must be verified by competent authorities.</span>
@@ -89,7 +89,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                 {
                     action == "modalTerms3" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4 text-lg text-justify'>The tokenization process must be carried out with full transparency so that potential token holders receive complete and accurate information about the asset and token mechanism.</p>
+                            <p className='mb-4 text-justify'>The tokenization process must be carried out with full transparency so that potential token holders receive complete and accurate information about the asset and token mechanism.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
                                 <span>A comprehensive description of the assets, including its market value, type, physical condition (if applicable), and location, must be disclosed.</span>
@@ -107,7 +107,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                  {
                     action == "modalTerms4" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4 text-lg text-justify'>The blockhain infrastructure used for tokenization must be secure, reliable, and capable of ensuring the integrity of the digital assets created.</p>
+                            <p className='mb-4 text-justify'>The blockhain infrastructure used for tokenization must be secure, reliable, and capable of ensuring the integrity of the digital assets created.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
                                 <span>The chosen blockchain (e.g., Ethereum, Binance Smart Chain, Solana) must have robust security measures to protect againts cyber threats and technical vulnerabilities.</span>
@@ -125,7 +125,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                 {
                     action == "modalTerms5" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4 text-lg'>The risks associated with tokenization must be clearly commicated, and liability limitations must be specified.</p>
+                            <p className='mb-4'>The risks associated with tokenization must be clearly commicated, and liability limitations must be specified.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
                                 <span>Risks include potential loss of asset value, market volatility, technological vulnerabilities, and regulatory changes.</span>
@@ -143,7 +143,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                    {
                     action == "modalTerms6" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-7 text-lg text-justify'>By proceeding, you confirm that you have cafefully read, uderstood, and agree to the Terms & Conditions. If you have any questions or need clarification, please reach out to our support team before continuing.</p>
+                            <p className='mb-7 text-justify'>By proceeding, you confirm that you have cafefully read, uderstood, and agree to the Terms & Conditions. If you have any questions or need clarification, please reach out to our support team before continuing.</p>
                             <div className='flex items-center mb-3 space-x-4'>
                                 <input
                                     type="checkbox"
