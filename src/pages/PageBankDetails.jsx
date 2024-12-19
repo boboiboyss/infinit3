@@ -112,7 +112,7 @@ export default function PageBankDetails(){
                         <p className="text-xl font-bold text-gray-800 mb-3">MANDIRI</p>
                         <div className="space-y-2">
                             <div className="flex justify-between">
-                            <span className="font-semibold">Account HOlder's Name</span>
+                            <span className="font-semibold">Account Holder's Name</span>
                             <span>Audi's Wallet</span>
                             </div>
                             <div className="flex justify-between">
