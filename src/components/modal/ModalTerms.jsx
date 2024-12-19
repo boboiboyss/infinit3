@@ -16,8 +16,8 @@ const ModalTerms = ({ isOpen, onClose }) => {
    const nextModalTerms5 = () => setAction('modalTerms5');
    const nextModalTerms6 = () => setAction('modalTerms6');
    const closeModal = () => onClose();
+   
    const handleCheckboxChange = (event) => {
-    // console.log('cek', event.target.checked);
     setCek(event.target.checked);
    };
 
