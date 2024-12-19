@@ -29,7 +29,7 @@ const ModalWallet = ({ isOpen, onClose, openWalletConnected, setSelectedWallet }
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative rounded-lg shadow-lg w-1/2 bg-[#C5D2F7]">
+      <div className="relative rounded-lg shadow-lg w-1/2 bg-[#C5D2F7] h-[480px]">
         <div className="flex">
           <div className="px-4 border-r border-black w-1/3">
             <img src={logo} alt="logo" className="h-16" />
