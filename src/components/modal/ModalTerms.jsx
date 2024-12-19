@@ -8,13 +8,18 @@ import iconGlobe from '../../assets/globe.png';
 const ModalTerms = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
    const [action, setAction] = useState('modalTerms1')
+   const [cek, setCek] = useState(false)
 
    const nextModalTerms2 = () => setAction('modalTerms2');
    const nextModalTerms3 = () => setAction('modalTerms3');
    const nextModalTerms4 = () => setAction('modalTerms4');
    const nextModalTerms5 = () => setAction('modalTerms5');
+   const nextModalTerms6 = () => setAction('modalTerms6');
    const closeModal = () => onClose();
-  
+   const handleCheckboxChange = (event) => {
+    // console.log('cek', event.target.checked);
+    setCek(event.target.checked);
+   };
 
 
 
@@ -35,6 +40,8 @@ const ModalTerms = ({ isOpen, onClose }) => {
                 ? "Technology and Blockchain Security"
                 : action === "modalTerms5"
                 ? "Risks and Disclaimers"
+                : action == "modalTerms6"
+                ? "Agreement Confirmation"
                 : "Legality and Regulatory Compliance"}
             </p>
 
@@ -115,7 +122,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                         </div>
                     )
                 }
-                  {
+                {
                     action == "modalTerms5" && (
                         <div className='flex flex-col h-full'>
                             <p className='mb-4 text-lg'>The risks associated with tokenization must be clearly commicated, and liability limitations must be specified.</p>
@@ -128,7 +135,34 @@ const ModalTerms = ({ isOpen, onClose }) => {
                                 <span>Asset owners or tokenization organizers are not liable for losses caused by external factors such as market fluctuations or unforeseen legal challenges.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={closeModal} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms6} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             </div>
+                        </div>
+                    )
+                }
+                   {
+                    action == "modalTerms6" && (
+                        <div className='flex flex-col h-full'>
+                            <p className='mb-7 text-lg text-justify'>By proceeding, you confirm that you have cafefully read, uderstood, and agree to the Terms & Conditions. If you have any questions or need clarification, please reach out to our support team before continuing.</p>
+                            <div className='flex items-center mb-3 space-x-4'>
+                                <input
+                                    type="checkbox"
+                                    id="last-name"
+                                    class="peer w-8 h-8 border border-gray-300 rounded-md px-4 pt-4 pb-2 text-sm focus:outline-none"
+                                    onChange={handleCheckboxChange}
+                                />
+                                <span>I confirm that I have read, understood, and agree to the Terms & Conditions outlined by the platform.</span>
+                            </div>
+                            <div className='flex justify-center items-center mt-auto'>
+                            
+                            {
+                                cek ? (
+                                    <button onClick={closeModal} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                                ) : (
+                                    <button disabled onClick={closeModal} className="bg-black opacity-45 text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                                )
+                            }
+                             
                              </div>
                         </div>
                     )
