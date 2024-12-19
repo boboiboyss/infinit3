@@ -64,9 +64,9 @@ const ModalWalletConnected = ({ isOpen, onClose, openKYC, wallet}) => {
                         isConnected ? (
                              <div className=' m-10 flex flex-col space-y-6 items-center justify-center'>
                                 <img alt={wallet?.name} className=" w-36 mx-auto h-36 rounded-full object-cover" src={wallet?.image}  />
-                                <p>Successfully Connected to {wallet?.name} Wallet</p>
+                                <p className='text-center font-semibold'>Successfully Connected to {wallet?.name} Wallet</p>
 
-                                <span className='text-sm'>You can view your list of wallets in the <Link to={'/address-book'} className='text-black no-underline font-bold'>Address Book</Link> menu or here</span>
+                                <span className='text-sm text-center'>You can view your list of wallets in the <Link to={'/address-book'} className='text-black no-underline font-bold'>Address Book</Link> menu or here</span>
                                 <button 
                                     onClick={() => {
                                         onClose();

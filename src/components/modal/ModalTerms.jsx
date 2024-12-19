@@ -4,6 +4,16 @@ import logo from '../../assets/logo2.png';
 import globe from '../../assets/globe.png'
 import customer from '../../assets/customer.png';
 import iconGlobe from '../../assets/globe.png';
+import iconHibernate from '../../assets/icon-hibernate.png';
+import iconLegal from '../../assets/icon-legal.png'
+import iconTax from '../../assets/icon-tax.png'
+import iconVerified from '../../assets/icon-verified.png'
+import iconDocument from '../../assets/icon-documents.png'
+import iconToken from '../../assets/icon-token.png'
+import iconShield from '../../assets/icon-shield.png'
+import iconProtected from '../../assets/icon-protected.png'
+import iconLaw from '../../assets/icon-laws.png'
+import iconWarning from '../../assets/icon-warning.png'
 
 const ModalTerms = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -55,11 +65,11 @@ const ModalTerms = ({ isOpen, onClose }) => {
                         <div className='flex flex-col h-full'>
                             <p className='mb-4 text-justify'>Asset tokenization must comply with the laws and regulations applicable in the relevant jurisdiction. Asset owners must adhere to legal frameworks governing securities, digital assets, and investor protection</p>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconLegal} alt='icon-legal' className='w-9 h-9' />
                                 <span>The owner must ensure that the asset being tokenized has a clear legal status and is free from disputes, cush as liens, third-party claims, or ownership issues.</span>
                             </div>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconHibernate} alt='icon-hibernate' className='w-9 h-9' />
                                 <span>If the tokenized asset is regulated by a spesific authority (e.g., Securities and Exchange Commission), the tokenization process must receive proper approval or licenses.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
@@ -73,11 +83,11 @@ const ModalTerms = ({ isOpen, onClose }) => {
                         <div className='flex flex-col h-full'>
                             <p className='mb-4'>The party conducting tokenization must prove lawful ownership of the asset or process the legal authority to tokenize it.</p>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconVerified} alt='icon-verified' className='w-9 h-9' />
                                 <span>Ownership documents, such as property deeds, stock certificates, or vehicle registration, must be verified by competent authorities.</span>
                             </div>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconTax} alt='icon-tax' className='w-9 h-9' />
                                 <span>Asset owners must recognize that tokenization does not absolve them of responsibilities such as taxes, maintenance, or other liablilities associated with the asset.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
@@ -91,11 +101,11 @@ const ModalTerms = ({ isOpen, onClose }) => {
                         <div className='flex flex-col h-full'>
                             <p className='mb-4 text-justify'>The tokenization process must be carried out with full transparency so that potential token holders receive complete and accurate information about the asset and token mechanism.</p>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconDocument} alt='icon-document' className='w-9 h-9' />
                                 <span>A comprehensive description of the assets, including its market value, type, physical condition (if applicable), and location, must be disclosed.</span>
                             </div>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconToken} alt='icon-token' className='w-9 h-9' />
                                 <span>A whitepaper or disclosure statement must outline the tokenization process, the technology used, and how the token correlates with the asset's value.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
@@ -109,11 +119,11 @@ const ModalTerms = ({ isOpen, onClose }) => {
                         <div className='flex flex-col h-full'>
                             <p className='mb-4 text-justify'>The blockhain infrastructure used for tokenization must be secure, reliable, and capable of ensuring the integrity of the digital assets created.</p>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconProtected} alt='icon-protected' className='w-9 h-9' />
                                 <span>The chosen blockchain (e.g., Ethereum, Binance Smart Chain, Solana) must have robust security measures to protect againts cyber threats and technical vulnerabilities.</span>
                             </div>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconShield} alt='icon-shield' className='w-9 h-9' />
                                 <span>Smart contracts used for token distribution must be independently audited to identify and eliminate potential security flaws.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
@@ -127,11 +137,11 @@ const ModalTerms = ({ isOpen, onClose }) => {
                         <div className='flex flex-col h-full'>
                             <p className='mb-4 text-justify'>The risks associated with tokenization must be clearly commicated, and liability limitations must be specified.</p>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconWarning} alt='icon-warning' className='w-9 h-9' />
                                 <span>Risks include potential loss of asset value, market volatility, technological vulnerabilities, and regulatory changes.</span>
                             </div>
                             <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
+                                <img src={iconLaw} alt='icon-law' className='w-9 h-9' />
                                 <span>Asset owners or tokenization organizers are not liable for losses caused by external factors such as market fluctuations or unforeseen legal challenges.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>

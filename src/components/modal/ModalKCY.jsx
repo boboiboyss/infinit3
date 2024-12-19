@@ -307,7 +307,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                     action=="modalKYC7" && (
                      <div className='h-full flex flex-col'>
                               <h1 className='font-bold text-xl mb-6'>Let's make sure you're you</h1>
-                              <p className='mb-4'>Position yourself in the center of the camera and then more your face left and right to show both slides</p>
+                              <p className='mb-4'>Position yourself in the center of the camera and then more your face left and right to show both sides</p>
                               <div className='w-full flex items-center justify-center p-20 border border-black rounded-lg'>
                                     <img src={iconFace} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
