@@ -21,7 +21,7 @@ export default function Sidebar() {
 
 
   return (
-    <div className="flex flex-col px-4 w-60">
+    <div className="flex flex-col px-4 w-[260px]">
       <div className="flex-1">
         <nav className="grid items-start text-md font-medium  border-r bg-muted/40 border-gray-900">
           <Link
