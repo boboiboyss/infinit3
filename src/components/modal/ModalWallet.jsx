@@ -34,7 +34,7 @@ const ModalWallet = ({ isOpen, onClose, openWalletConnected, setSelectedWallet }
           <div className="px-4 border-r border-black w-1/3">
             <img src={logo} alt="logo" className="h-16" />
             <h2 className="text-xl font-bold mb-4">Connect your wallet</h2>
-            <p className="mb-4">
+            <p className="mb-4 text-justify">
               Connect your wallet to access Web3. Choose your preferred wallet from the options below to get started.
             </p>
 

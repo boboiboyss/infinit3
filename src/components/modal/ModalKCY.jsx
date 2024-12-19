@@ -67,7 +67,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         <>
                             <div className='h-full flex flex-col'>
                     <h1 className='font-bold text-xl mb-6'>Eligibility Criteria</h1>
-                    <p className='mb-6'>To qualitfy for the purchase of an Asset, you (or your organization, as applicable) must meet the following requirements:</p>
+                    <p className='mb-6 text-justify'>To qualitfy for the purchase of an Asset, you (or your organization, as applicable) must meet the following requirements:</p>
                     <div className='space-y-2'>
                         <div className='flex items-center space-x-2'>
                             <img src={globe} alt='globe' className='w-10 h-10' />
@@ -219,7 +219,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                     <div className='h-full flex flex-col'>
                         <h1 className='font-bold text-xl mb-4'>What is the country of your residence ?</h1>
                           <div class="relative w-full rounded-xl">
-                            <p>This allows us to identify the most appropriate method to verify your identity.</p>
+                            <p className='text-justify'>This allows us to identify the most appropriate method to verify your identity.</p>
                             <select
                                 id="last-name"
                                 class="peer rounded-lg w-full border bg-white border-gray-300 px-3 py-4 text-sm focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700"

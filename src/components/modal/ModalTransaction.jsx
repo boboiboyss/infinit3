@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from "react";
 import iconLoading from "../../assets/icon-loading.png";
 import iconSuccess from "../../assets/icon-success.png";
+import metamask from '../../assets/metamaskwallet.png';
+import okx from '../../assets/okxwallet.jpeg';
+import coin98 from '../../assets/coin98.png';
+import defi from '../../assets/defiwallet.png';
+import wallet from '../../assets/walletconnect.png';
+import bitget from '../../assets/bitget.png';
 
-const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone }) => {
+const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, no }) => {
   if (!isOpen) return null;
 
   const [isOpened, setIsOpened] = useState(false);
-  const [transactionStep, setTransactionStep] = useState(1);
+  const [transactionStep, setTransactionStep] = useState(0+no);
+
+   const wallets = [
+    { id : 1, name: "Metamask", image: metamask, walletName : "Audi's Wallet", publicAddress : "0x12345678987654321" },
+    { id : 2, name: "OKX Wallet", image: okx, walletName : "Audi's Wallet", publicAddress : "0x12345678987654321" },
+    { id : 3, name: "Coin98 Wallet", image: coin98, walletName : "Audi's Wallet", publicAddress : "0x12345678987654321" },
+    { id : 4, name: "DeFi Wallet", image: defi, walletName : "Audi's Wallet", publicAddress : "0x12345678987654321" },
+    { id : 5, name: "WalletConnect", image: wallet, walletName : "Audi's Wallet", publicAddress : "0x12345678987654321" },
+    { id : 6, name: "Bitget Wallet", image: bitget, walletName : "Audi's Wallet", publicAddress : "0x12345678987654321" },
+  ];
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsOpened(true);
-    }, 500);
+    if(transactionStep >= 1) {
+        setTimeout(() => {
+            setIsOpened(true);
+        }, 500);
+    }
   }, [transactionStep]);
 
   const handleNextTransaction = () => {
@@ -24,9 +41,15 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone }) => {
     onClose()
   }
 
+  const handleSelectedWallet = (wallet) => {
+    setSelectedWallet(wallet);
+    setTransactionStep(transactionStep + 1);
+    onClose();
+  }
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative rounded-lg shadow-lg w-1/4 bg-[#E096AA] h-auto p-16">
+      <div className={`relative rounded-lg shadow-lg w-1/3 bg-[#E096AA] ${transactionStep == 0 ? "p-6" : "p-16" }`}>
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-black hover:text-gray-600 focus:outline-none"
@@ -48,14 +71,64 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone }) => {
         </button>
 
         <div className="flex flex-col justify-center items-center gap-y-6">
-          {isOpened ? (
-            <img src={iconSuccess} alt="icon-success" className="h-18 w-[70px]" />
-          ) : (
-            <img src={iconLoading} alt="icon-loading" className="h-18 w-16" />
-          )}
+        
+          {
+            transactionStep === 0 && (
+            <div className="w-full">
+                <h1 className="text-lg font-semibold text-center mb-8">Choose Wallet</h1>
+                <div className='content flex flex-col space-y-2'>
+                {wallets.map((wallet, index) => (
+                <button key={index} onClick={() => handleSelectedWallet({
+                    id: wallet.id,
+                    image : wallet.image,
+                    name : wallet.name,
+                    walletName : wallet.walletName,
+                    publicAddress : wallet.publicAddress
+                })}>
+                  <div className="rounded-xl p-2 border-[1px] border-black bg-white">
+                    <div className="flex">
+                    <div className="flex items-center space-x-4 w-full flex-start">
+                        
+                    <img
+                        src={wallet?.image}
+                        alt="Product Icon"
+                        className="w-16 h-16 rounded-full object-cover"
+                        />
+                    
+                        <div className="h-full border-l-2 border-black"></div>
 
-          {transactionStep === 1 ? (
+                        <div className="flex flex-col justify-between w-full">
+                        <div className="space-y-1">
+                            <div className="flex justify-between">
+                            <span className="font-semibold">{wallet?.name}</span>
+                             </div>
+                            <div className="flex justify-between">
+                            <span className="font-semibold">Wallet Name</span>
+                            <span>{wallet?.walletName}</span>
+                            </div>
+                            <div className="flex justify-between">
+                            <span className="font-semibold">Public Address</span>
+                            <span>0x12345678987654321</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </button>
+              ))}
+             </div>
+            </div>
+            )
+          }
+
+          {transactionStep === 1 && (
             <>
+            {isOpened ? (
+                <img src={iconSuccess} alt="icon-success" className="h-18 w-[70px]" />
+            ) : (
+                <img src={iconLoading} alt="icon-loading" className="h-18 w-16" />
+            )}
               <p className="text-xl font-bold">Transaction 1 of 2</p>
               {isOpened ? (
                 <>
@@ -63,8 +136,7 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone }) => {
                   <p className="text-sm text-center">
                     A second transaction is required to complete your investment.
                   </p>
-                        <div className=" space-y-2 mt-3">
-                        <button className="bg-white text-black p-4 text-center rounded-lg w-full text-sm">View Receipt</button>
+                        <div className=" space-y-2 mt-12">
                         <button onClick={handleNextTransaction} className="bg-black text-white p-4 text-center rounded-lg w-full text-sm">Next: Deposit USDT</button>
                     </div>
                 </>
@@ -79,17 +151,23 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone }) => {
                 </>
               )}
             </>
-          ) : (
+          )}  
+          
+          {transactionStep === 2 && (
             <>
+            {isOpened ? (
+                <img src={iconSuccess} alt="icon-success" className="h-18 w-[70px]" />
+            ) : (
+                <img src={iconLoading} alt="icon-loading" className="h-18 w-16" />
+            )}
               <p className="text-xl font-bold">Transaction 2 of 2</p>
               {isOpened ? (
-                <>
-                  <p className="text-xl font-bold">Deposit Completed</p>
+                <div className="space-y-10">
+                  <p className="text-xl font-bold text-center">Deposit Completed</p>
                   <p className="text-sm text-center">
                    Subscription requested successfully. You may close this window
                   </p>
-                   <div className=" space-y-2 mt-3">
-                     <button className="bg-white text-black p-4 text-center rounded-lg w-full text-sm">View Receipt</button>
+                   <div className="space-y-2 mt-3">
                     <button
                     onClick={handleDone}
                       className="bg-black text-white p-4 text-center rounded-lg w-full text-sm mt-4"
@@ -97,7 +175,7 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone }) => {
                         Complete
                     </button>
                    </div>
-                </>
+                </div>
               ) : (
                 <>
                   <p className="text-xl font-bold">Waiting for confirmation</p>

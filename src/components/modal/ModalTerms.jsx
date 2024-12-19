@@ -125,7 +125,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                 {
                     action == "modalTerms5" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4'>The risks associated with tokenization must be clearly commicated, and liability limitations must be specified.</p>
+                            <p className='mb-4 text-justify'>The risks associated with tokenization must be clearly commicated, and liability limitations must be specified.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconGlobe} alt='icon-globe' className='w-9 h-9' />
                                 <span>Risks include potential loss of asset value, market volatility, technological vulnerabilities, and regulatory changes.</span>
