@@ -89,7 +89,7 @@ const handleDetailProduct = () => {
   return (
     <div className="min-h-screen">
       <h1 className="text-2xl font-bold mb-3">Product</h1>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 ">
             {products.map((product) => (
         <div
           key={product.id}

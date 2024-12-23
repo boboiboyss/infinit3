@@ -92,7 +92,7 @@ function PageProductBuy() {
 
                             <p className="mt-20 text-justify">You should receive an email confirming your deposit shortly.You will also receive within 2-3 Business Days. If you do not hear from us within 5 Business Days, please contact us at support@Infinit3.finance.</p>
 
-                            <button onClick={handleDone} className="bg-black text-white p-4 text-center rounded-lg w-full text-sm mt-5">Done</button>
+                            <button onClick={handleDone} className="bg-black text-white p-4 text-center rounded-lg w-full text-sm mt-5 font-semibold">Done</button>
                         </div>
                     ) : (
                     <div>
@@ -134,9 +134,9 @@ function PageProductBuy() {
                         </div>
                     </div>
                     {selectedWallet ? (
-                        <button onClick={openModal2} className="text-white bg-black text-center p-5 w-full rounded-xl">Approve use of USDT</button>
+                        <button onClick={openModal2} className="text-white bg-black text-center p-5 w-full rounded-xl font-semibold">Approve use of USDT</button>
                     ) : (
-                        <button onClick={openModal} className="text-white bg-black text-center p-5 w-full rounded-xl">Connect Wallet</button>
+                        <button onClick={openModal} className="text-white bg-black text-center p-5 w-full rounded-xl font-semibold">Connect Wallet</button>
                     )}
                     </div>
                     )

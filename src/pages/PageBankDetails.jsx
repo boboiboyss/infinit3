@@ -14,7 +14,7 @@ export default function PageBankDetails(){
            <div className='flex items-center justify-between mb-3'>
              <h1 className="text-2xl font-bold mb-3">Bank Details</h1>
              <div className='flex justify-center items-center mt-auto'>
-                <button onClick={handleAddBankAccount} className="bg-black text-white py-3 px-5  text-center rounded-xl">Add Bank Account</button>
+                <button onClick={handleAddBankAccount} className="bg-black text-white py-3 px-5  text-center rounded-xl font-semibold">Add Bank Account</button>
              </div>
            </div>          
            <div className="grid grid-cols-2 gap-4">
@@ -34,7 +34,7 @@ export default function PageBankDetails(){
                 <p className="text-xl font-bold text-gray-800 mb-3">BCA</p>
                 <div className="space-y-2">
                     <div className="flex justify-between font-semibold">
-                    <span className="font-semibold">Account Holder's Name</span>
+                    <span className="font-semibold">Account  Holder's Name</span>
                     <span>Audi's Wallet</span>
                     </div>
                     <div className="flex justify-between font-semibold">

@@ -44,7 +44,7 @@ export default function PageProductDetail(){
                         </div>
                    </div>
                    <div className="flex flex-col">
-                      <div className="py-2 px-8 bg-green-300 text-white rounded-lg">
+                      <div className="py-2 bg-green-300 text-white rounded-lg">
                           <p className="font-bold text-center">$1.0717</p>
                       </div>
                           <span className="text-sm">2024 December 18 09:36:48</span>
