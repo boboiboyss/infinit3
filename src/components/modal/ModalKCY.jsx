@@ -79,7 +79,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         </div>
                     </div>
                     <div className='flex justify-center items-center mt-auto'>
-                        <button onClick={nextModalKYC2} className="bg-black text-white py-3 px-16 text-center rounded-xl">Continue</button>
+                        <button onClick={nextModalKYC2} className="bg-black text-white py-3 px-16 text-center rounded-xl font-semibold">Continue</button>
                     </div>
                 </div>
                         </>
@@ -97,12 +97,6 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                             id="first-name"
                             class="peer w-full border border-gray-300 rounded-md p-3 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700"
                         />
-                        {/* <label
-                            for="first-name"
-                            class="absolute left-3 top-2.5 text-gray-500 text-sm transition-all duration-300 transform origin-[0] scale-100 peer-placeholder-shown:top-2.5 peer-placeholder-shown:scale-100 peer-focus:top-0 peer-focus:scale-75 peer-focus:text-gray-700 peer-valid:top-0 peer-valid:scale-75"
-                        >
-                            First Name
-                        </label> */}
                         </div>
 
                         <div class="relative w-full rounded-xl mb-2">
@@ -148,7 +142,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                          <span className='text-sm'>Non-binding. This information allows us to better understand and serve our clients.</span>
                          
                          <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC3} className="bg-black text-white py-4 px-14 text-center rounded-xl text-sm m-auto">Start KYC</button>
+                            <button onClick={nextModalKYC3} className="bg-black text-white py-4 px-14 text-center rounded-xl text-sm m-auto font-semibold">Start KYC</button>
                          </div>
                         
                      </div>
@@ -188,7 +182,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         </div>
 
                          <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC4} className="bg-black text-white py-4 px-14 text-center rounded-xl text-sm">Select</button>
+                            <button onClick={nextModalKYC4} className="bg-black text-white py-4 px-14 text-center rounded-xl text-sm font-semibold">Select</button>
                          </div>
 
                    </div>
@@ -214,7 +208,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         </div>
 
                           <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC5} className="bg-black text-white py-4 px-14 text-center rounded-xl text-sm">Continue</button>
+                            <button onClick={nextModalKYC5} className="bg-black text-white py-4 px-14 text-center rounded-xl text-sm font-semibold">Continue</button>
                          </div>
                     </div>
                    )
@@ -251,7 +245,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC7} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm">Upload a photo</button>
+                            <button onClick={nextModalKYC7} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm font-semibold">Upload a photo</button>
                          </div>
                         </div>
                     )
@@ -265,7 +259,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC7} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm">Upload a photo</button>
+                            <button onClick={nextModalKYC7} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm font-semibold">Upload a photo</button>
                          </div>
                         </div>
                     )
@@ -279,7 +273,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC7} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm">Upload a photo</button>
+                            <button onClick={nextModalKYC7} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm font-semibold">Upload a photo</button>
                          </div>
                         </div>
                     )
@@ -293,7 +287,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                     <img src={iconFace} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC8} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm">Get started</button>
+                            <button onClick={nextModalKYC8} className="bg-black text-white py-4 px-10 text-center rounded-xl text-sm font-semibold">Get started</button>
                          </div>
                         </div>   
                     )
@@ -367,7 +361,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                     />
                                  </div>
                                 <div className='flex justify-center items-center mt-8'>
-                                <button onClick={nextModalKYC9} className="bg-black text-white py-3 px-16 text-center rounded-xl">Continue</button>
+                                <button onClick={nextModalKYC9} className="bg-black text-white py-3 px-16 text-center rounded-xl font-semibold">Continue</button>
                                 </div>
                                         
                         </div>
@@ -382,7 +376,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                 <img src={iconSuccess} alt='icon-upload-photo' className=' w-30 h-30' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC10} className="bg-black text-white py-4 px-20 text-center rounded-xl text-sm">Next</button>
+                            <button onClick={nextModalKYC10} className="bg-black text-white py-4 px-20 text-center rounded-xl text-sm font-semibold">Next</button>
                          </div>
                         </div>
                     )
@@ -408,7 +402,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                             </div>
 
                                <div className='flex justify-center items-center mt-auto'>
-                            <button onClick={nextModalKYC11} className="bg-black text-white py-4 px-6 text-center rounded-xl text-sm">Continue to wallet verification</button>
+                            <button onClick={nextModalKYC11} className="bg-black text-white py-4 px-6 text-center rounded-xl text-sm font-semibold">Continue to wallet verification</button>
                          </div>
                         </div>
                     )
@@ -435,7 +429,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                     />
                                 </div>
                              <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalKYC12} className="bg-black text-white py-4 px-8 text-center rounded-xl text-sm">Add your wallet</button>
+                             <button onClick={nextModalKYC12} className="bg-black text-white py-4 px-8 text-center rounded-xl text-sm font-semibold">Add your wallet</button>
                              </div>
                         </div>
                     )
@@ -458,7 +452,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                 <span>Note that the next page contains a large document and may take up to two minutes to load.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalKYC13} className="bg-black text-white py-4 px-8 text-center rounded-xl text-sm">Review and Sign Documents</button>
+                             <button onClick={nextModalKYC13} className="bg-black text-white py-4 px-8 text-center rounded-xl text-sm font-semibold">Review and Sign Documents</button>
                              </div>
                         </div>
                     )
@@ -481,7 +475,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                 <span>Once approved, you'll view the subscription packet in your account page.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={openModalTerm} className="bg-black text-white py-4 px-8 text-center rounded-xl text-sm">Complete</button>
+                             <button onClick={openModalTerm} className="bg-black text-white py-4 px-8 text-center rounded-xl text-sm font0-semibold font-semibold">Complete</button>
                              </div>
                         </div>
                     )

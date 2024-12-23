@@ -22,11 +22,11 @@ export default function PagePortofolio() {
             <div className="space-y-2 flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex flex-col space-y-2">
-                        <p>Current Balance</p>
+                        <p className="font-semibold">Current Balance</p>
                         <p className="text-3xl font-semibold">$100,000.00</p>
                         <div className="flex items-center space-x-2">
                            <p className={time === "24h" ? "text-[#79EA86]" : "text-[#e75757]"}>{time === '24h' ? "+$200.00 (20%)" : "-$200.00 (20%)"}</p>
-                            <p className="bg-[#E9ECEF] text-black p-[3px] rounded-md">{time}</p>
+                            <p className="bg-[#E9ECEF] text-black p-[3px] rounded-md font-semibold">{time}</p>
                         </div>
                     </div>
                     <div className="flex item-center w-2/3 space-x-14">
@@ -56,7 +56,7 @@ export default function PagePortofolio() {
                                 <button
                                     key={option}
                                     onClick={() => setTime(option)}
-                                    className={`p-1 rounded-md ${
+                                    className={`p-1 rounded-md font-semibold ${
                                         time === option
                                             ? 'bg-[#E9ECEF] text-black'
                                             : 'text-white'              
@@ -88,7 +88,7 @@ export default function PagePortofolio() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr className="font-semibold">
                         <td>
                             <div className="flex items-center justify-center space-x-2">
                                 <div className="border border-black rounded-full">
@@ -123,7 +123,7 @@ export default function PagePortofolio() {
                         </td>
                         <td>$14,000.00</td>
                     </tr>
-                    <tr>
+                    <tr className="font-semibold">
                         <td>
                             <div className="flex items-center justify-center space-x-2">
                                 <div className="border border-black rounded-full">

@@ -84,7 +84,7 @@ const ModalWallet = ({ isOpen, onClose, openWalletConnected, setSelectedWallet }
                       alt={wallet.name}
                       className="w-16 h-16 object-cover rounded-full"
                     />
-                    <span>{wallet.name}</span>
+                    <span className='font-semibold'>{wallet.name}</span>
                   </div>
                 </button>
               ))}

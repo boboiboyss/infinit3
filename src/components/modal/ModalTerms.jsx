@@ -75,7 +75,7 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                                 <span>If the tokenized asset is regulated by a spesific authority (e.g., Securities and Exchange Commission), the tokenization process must receive proper approval or licenses.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms2} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms2} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                              </div>
                         </div>
                     )
@@ -93,7 +93,7 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                                 <span>Asset owners must recognize that tokenization does not absolve them of responsibilities such as taxes, maintenance, or other liablilities associated with the asset.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms3} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms3} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                              </div>
                         </div>
                     )
@@ -111,7 +111,7 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                                 <span>A whitepaper or disclosure statement must outline the tokenization process, the technology used, and how the token correlates with the asset's value.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms4} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms4} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                              </div>
                         </div>
                     )
@@ -129,7 +129,7 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                                 <span>Smart contracts used for token distribution must be independently audited to identify and eliminate potential security flaws.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms5} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms5} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                              </div>
                         </div>
                     )
@@ -147,7 +147,7 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                                 <span>Asset owners or tokenization organizers are not liable for losses caused by external factors such as market fluctuations or unforeseen legal challenges.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms6} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms6} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                              </div>
                         </div>
                     )
@@ -169,9 +169,9 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                             
                             {
                                 cek ? (
-                                    <button onClick={closeModal} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                                    <button onClick={closeModal} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                                 ) : (
-                                    <button disabled onClick={closeModal} className="bg-black opacity-45 text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                                    <button disabled onClick={closeModal} className="bg-black opacity-45 text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                                 )
                             }
                              

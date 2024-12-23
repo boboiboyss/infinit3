@@ -72,7 +72,7 @@ const ModalWalletConnected = ({ isOpen, onClose, openKYC, wallet}) => {
                                         onClose();
                                         openKYC();
                                     }}
-                                    className="bg-black text-white p-4 text-center rounded-lg w-full text-sm mt-5"
+                                    className="bg-black text-white p-4 text-center rounded-lg w-full text-sm mt-5 font-semibold"
                                 >Next: KYC   
                                 </button>
                             </div>

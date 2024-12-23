@@ -20,7 +20,7 @@ export default function PageAddressBook() {
     <div className="min-h-min">
         <div className='flex items-center justify-between mb-3'>
             <h1 className="text-2xl font-bold mb-3">Address Book</h1>
-            <button onClick={openModal} className="bg-black text-white py-3 px-5  text-center rounded-xl">Add Wallet</button>
+            <button onClick={openModal} className="bg-black text-white py-3 px-5  text-center rounded-xl font-semibold">Add Wallet</button>
 
         </div>
         <div className="grid grid-cols-2 gap-4">

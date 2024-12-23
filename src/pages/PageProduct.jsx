@@ -112,7 +112,7 @@ const handleDetailProduct = () => {
             <div className="space-x-3">
               <button
                 onClick={handleProductBuy}
-                className="bg-black text-white px-4 py-2 rounded-md"
+                className="bg-black text-white px-4 py-2 rounded-md font-semibold"
               >
                 Invest
               </button>
@@ -120,7 +120,7 @@ const handleDetailProduct = () => {
               {btnWD && (
                 <button
                   onClick={openModalTermsWD}
-                  className="bg-black text-white px-4 py-2 rounded-md"
+                  className="bg-black text-white px-4 py-2 rounded-md font-semibold"
                 >
                   Withdraw
                 </button>

@@ -38,7 +38,7 @@ function PageWithdraw() {
         <div className="min-h-screen min-w-full">
             <div className="flex items-center justify-between w-full h-full">
                 <div className="left w-1/2 h-screen bg-white p-8">
-                  <Link to={'/login'}>
+                  <Link to={'/'}>
                      <img src={logo} alt="logo" className="h-16" />
                   </Link>
                    <div className="flex items-center space-x-3 mb-4">
@@ -84,12 +84,12 @@ function PageWithdraw() {
                 <div className="right w-1/2 bg-[#C5D2F7] p-12 flex flex-col h-screen">
                   
                     <div>
-                       <div className="heading">
-                        <h1 className="text-lg font-semibold">Withdraw Funds</h1>
+                       <div className="heading mb-3">
+                        <h1 className="text-lg font-bold">Withdraw Funds</h1>
                     </div>
-                    <p>Please connect a wallet associated with your account to withdraw funds.</p>
+                    <p className="font-semibold">Please connect a wallet associated with your account to withdraw funds.</p>
 
-                    <div className="w-full bg-white px-3 py-5 rounded-lg my-6">
+                    <div className="w-full bg-white px-6 py-9 rounded-lg my-6">
                         <div className="flex items-center space-x-3 justify-between">
                            <div className="left">
                               <div className="">
@@ -106,7 +106,7 @@ function PageWithdraw() {
                         </div>
                     </div>
 
-                    <div className="w-full bg-white px-3 py-5 rounded-lg my-6">
+                    <div className="w-full bg-white px-6 py-9 rounded-lg my-6">
                         <div className="flex items-center space-x-3 justify-between">
                            <div className="left">
                                 <p>Amount</p>
@@ -125,7 +125,7 @@ function PageWithdraw() {
                     {[25, 50, 75, 100].map((percentage) => (
                         <div
                         key={percentage}
-                        className={`p-3 rounded-lg cursor-pointer ${
+                        className={`p-3 font-semibold rounded-lg cursor-pointer ${
                             activeButton === percentage
                             ? "bg-white text-black"
                             : "bg-black text-white"
@@ -138,9 +138,9 @@ function PageWithdraw() {
                     </div>
 
                        {selectedWallet && 
-                        <div className="w-full bg-white p-3 rounded-lg my-6">
+                        <div className="w-full bg-white p-6 rounded-lg my-6">
                             <div className="flex items-center space-x-4">
-                                <img src={selectedWallet?.image} alt="coin" className="w-10 h-10 rounded-full object-cover" />
+                                <img src={selectedWallet?.image} alt="coin" className="w-12 h-12 rounded-full object-cover" />
                                 <div className="flex flex-col gap-y-1">
                                     <span className="font-semibold">{selectedWallet?.walletName}</span>
                                     <span>{selectedWallet?.publicAddress}</span>
@@ -150,9 +150,9 @@ function PageWithdraw() {
                     }
                     <div className='flex justify-center items-center mt-9'>
                         {selectedWallet ? (
-                            <button onClick={openModal2} className="text-white bg-black text-center p-5 w-full rounded-xl mt-7">Withdraw</button>
+                            <button onClick={openModal2} className="text-white bg-black text-center p-5 w-full rounded-xl mt-7 font-semibold">Withdraw</button>
                         ) : (
-                            <button onClick={openModal} className="text-white bg-black text-center p-5 w-full rounded-xl mt-7">Connect Wallet</button>
+                            <button onClick={openModal} className="text-white bg-black text-center p-5 w-full rounded-xl mt-7 font-semibold">Connect Wallet</button>
                         )}
                     </div>
 

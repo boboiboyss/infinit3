@@ -75,7 +75,7 @@ const ModalTermsWD = ({ isOpen, onClose }) => {
                                 <span>As part of Anti-Money Laundering (AML) protocols, all withdrawal requests are monitored and cross-checked for suspicious activity or compliance violations. If flagged, such requests may be temporarily paused or denied.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms2} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms2} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                              </div>
                         </div>
                     )
@@ -93,7 +93,7 @@ const ModalTermsWD = ({ isOpen, onClose }) => {
                                 <span>For users in higher verification tiers, limits may be increased to accommodate larger transactions, provided they meet additional requirements. These limits protect users and platforms from potential fraud.</span>
                             </div>
                             <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms3} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                             <button onClick={nextModalTerms3} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                              </div>
                         </div>
                     )
@@ -115,9 +115,9 @@ const ModalTermsWD = ({ isOpen, onClose }) => {
                             
                             {
                                 cek ? (
-                                    <button onClick={linkPageWD} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                                    <button onClick={linkPageWD} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                                 ) : (
-                                    <button disabled onClick={linkPageWD} className="bg-black opacity-45 text-white py-4 px-12 text-center rounded-xl text-sm">Continue</button>
+                                    <button disabled onClick={linkPageWD} className="bg-black opacity-45 text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
                                 )
                             }
                              
