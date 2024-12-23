@@ -49,7 +49,7 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone, setSelectedWalle
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className={`relative rounded-lg shadow-lg w-1/3 bg-[#E096AA] ${transactionStep == 0 ? "p-6" : "p-16" }`}>
+      <div className={`relative rounded-lg shadow-lg bg-[#E096AA] ${transactionStep == 0 ? "p-6 w-1/3" : "p-16 w-1/4" }`}>
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-black hover:text-gray-600 focus:outline-none"
