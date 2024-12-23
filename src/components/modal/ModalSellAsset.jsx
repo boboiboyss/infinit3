@@ -9,11 +9,11 @@ import wallet from '../../assets/walletconnect.png';
 import bitget from '../../assets/bitget.png';
 import { useNavigate } from "react-router-dom";
 
-const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, no }) => {
+const ModalSellAsset = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, no }) => {
   if (!isOpen) return null;
 
   const [isOpened, setIsOpened] = useState(false);
-  const [transactionStep, setTransactionStep] = useState(0+no);
+  const [transactionStep, setTransactionStep] = useState(1);
   const navigate = useNavigate();
 
    const wallets = [
@@ -74,56 +74,7 @@ const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, 
 
         <div className="flex flex-col justify-center items-center gap-y-6">
         
-          {
-            transactionStep === 0 && (
-            <div className="w-full">
-                <h1 className="text-lg font-semibold text-center mb-8">Choose Wallet</h1>
-                <div className='content flex flex-col space-y-2'>
-                {wallets.map((wallet, index) => (
-                <button key={index} onClick={() => handleSelectedWallet({
-                    id: wallet.id,
-                    image : wallet.image,
-                    name : wallet.name,
-                    walletName : wallet.walletName,
-                    publicAddress : wallet.publicAddress
-                })}>
-                  <div className="rounded-xl p-2 border-[1px] border-black bg-white">
-                    <div className="flex">
-                    <div className="flex items-center space-x-4 w-full flex-start">
-                        
-                    <img
-                        src={wallet?.image}
-                        alt="Product Icon"
-                        className="w-16 h-16 rounded-full object-cover"
-                        />
-                    
-                        <div className="h-full border-l-2 border-black"></div>
-
-                        <div className="flex flex-col justify-between w-full">
-                        <div className="space-y-1">
-                            <div className="flex justify-between">
-                            <span className="font-semibold">{wallet?.name}</span>
-                             </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Wallet Name</span>
-                            <span>{wallet?.walletName}</span>
-                            </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Public Address</span>
-                            <span>0x12345678987654321</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                </button>
-              ))}
-             </div>
-            </div>
-            )
-          }
-
+        
           {transactionStep === 1 && (
             <>
             {isOpened ? (
@@ -131,11 +82,11 @@ const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, 
             ) : (
                 <img src={iconLoading} alt="icon-loading" className="h-18 w-16" />
             )}
-              <p className="text-xl font-bold">Withdraw Complete</p>
+              <p className="text-xl font-bold">Sell Asset Complete</p>
               {isOpened ? (
                 <>
                   <p className="text-sm text-center">
-                    Your withdrawal of 250 USDT from the Infinit3 smart contract is being processed. The transaction will proceed until the funds are successfully received by the investor.
+                    Your sale of 250 USDT from the Infinit3 smart contract is currently being processed. The transaction will be completed once the funds are successfully delivered to your account.
                   </p>
                         <div className=" space-y-2 mt-12">
                         <button onClick={handleDone} className="bg-black text-white p-4 text-center rounded-lg w-full text-sm px-14">Complete</button>
@@ -145,9 +96,8 @@ const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, 
                 <>
                   <p className="text-xl font-bold">Waiting for confirmation</p>
                   <p className="text-sm text-center">
-                    You are about to withdraw 250 USDT from the Infinit3 smart contract. Please confirm the transaction in your wallet to proceed.
+                    You are about to sell 250 USDT from the Infinit3 smart contract.
                   </p>
-                  <span className="text-sm mt-14">Action needed in wallet</span>
                 </>
               )}
             </>
@@ -193,4 +143,4 @@ const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, 
   );
 };
 
-export default ModalWithdraw;
+export default ModalSellAsset;

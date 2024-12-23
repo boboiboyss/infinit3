@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import logo from '../assets/logo.png'
+import iconNotif from '../assets/icon-notif.png'
 import profile from '../assets/profile.png'
 export default function Headers() {
     return (
@@ -18,7 +19,8 @@ export default function Headers() {
             </nav> */}
           </div>
 
-          <div> 
+          <div className="flex items-center space-x-5"> 
+            <img src={iconNotif} className="w-6 h-6 rounded-full" alt="icon-notif" />
             <img src={profile} className='w-14 h-14 rounded-full object-cover' alt='profile' />
           </div>
         </div>

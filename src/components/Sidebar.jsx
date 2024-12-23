@@ -27,9 +27,9 @@ export default function Sidebar() {
       <div className="flex-1">
         <nav className="grid items-start text-md font-medium  border-r bg-muted/40 border-gray-900">
           <Link
-            to="/home"
+            to="/product"
             className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname === "/home" || location.pathname === `/home/${id}` || location.pathname === "/"
+              location.pathname === "/product" || location.pathname === `/product/${id}` || location.pathname === "/"
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
             } transition-all hover:text-primary font-bold`}

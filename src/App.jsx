@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import PageLogin from './pages/PageLogin';
 import PageCheckEmail from './pages/PageCheckEmail';
-import PageHome from './pages/PageHome';
+import PageProduct from './pages/PageProduct';
 import RootLayout from './layouts/RootLayout';
 import PageAddressBook from './pages/PageAddressBook';
 import PageBankDetails from './pages/PageBankDetails';
@@ -16,7 +16,9 @@ import PageAddBankAccount from './pages/PageAddBankAccount';
 import PageWithdraw from './pages/PageWithdraw';
 import PageTransactionDetail from './pages/PageTransactionDetail';
 import PageNotFound from './pages/PageNotFound';
-import PageProductDetail from './pages/ProductDetail';
+import PageProductDetail from './pages/PageProductDetail';
+import PageSellAsset from './pages/PageSellAsset';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
@@ -31,13 +33,13 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={isLoggedIn ? <Navigate to="/home" replace/> : <PageLogin />} />
-        <Route path="/check-email" element={isLoggedIn ? <Navigate to="/home" replace /> : <PageCheckEmail />} />
+        <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace/> : <PageLogin />} />
+        <Route path="/check-email" element={isLoggedIn ? <Navigate to="/" replace /> : <PageCheckEmail />} />
 
         <Route element={<PrivateRoute />}>
           <Route path="/" element={<RootLayout />}>
-            <Route index element={<PageHome />} />
-            <Route path="home" element={<PageHome />} />
+            <Route index element={<PageProduct />} />
+            <Route path="product" element={<PageProduct />} />
             <Route path="address-book" element={<PageAddressBook />} />
             <Route path="bank-details" element={<PageBankDetails />} />
             <Route path="documents" element={<PageDocuments />} />
@@ -47,11 +49,12 @@ function App() {
             <Route path="transaction" element={<PageTransaction />} />
             <Route path='add-bank-account' element={<PageAddBankAccount />} />
             <Route path='transaction/:id' element={<PageTransactionDetail />} />
-            <Route path='home/:id' element={<PageProductDetail />} />
+            <Route path='product/:id' element={<PageProductDetail />} />
             
           </Route>
             <Route path='withdraw' element={<PageWithdraw /> } />
-          <Route path='/product-buy' element={<PageProductBuy />} />4
+          <Route path='buy-asset' element={<PageProductBuy />} />
+          <Route path='sell-asset' element={<PageSellAsset />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

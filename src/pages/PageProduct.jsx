@@ -7,7 +7,7 @@ import ModalKYC from '../components/modal/ModalKCY';
 import ModalTerms from '../components/modal/ModalTerms';
 import ModalTermsWD from '../components/modal/ModalTermsWD';
 
-function PageHome() {
+function PageProduct() {
 const [isModal, setIsmodal] = useState(false);
 const [isModalWalletConnectedOpen, setIsModalWalletConnectedOpen] = useState(false);
 const [isModalKYC, setIsModalKYC] = useState(false)
@@ -31,7 +31,7 @@ const navigate = useNavigate();
 
  const handleProductBuy = (event) => {
     event.preventDefault();
-    navigate('/product-buy');
+    navigate('/buy-asset');
 }
 
 
@@ -232,5 +232,5 @@ const navigate = useNavigate();
   );
 }
 
-export default PageHome;
+export default PageProduct;
 

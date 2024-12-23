@@ -6,17 +6,17 @@ function PageLogin() {
 const navigate = useNavigate();
 
     const handleContinue = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         
         localStorage.setItem('isLoggedIn', 'true');
         navigate('/check-email');
     }
 
     const handleContinueWithGoogle = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
 
         localStorage.setItem('isLoggedIn', 'true')
-        navigate('/home');
+        navigate('/product');
     }
 
   return (

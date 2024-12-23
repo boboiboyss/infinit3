@@ -35,7 +35,8 @@ export default function PagePortofolio() {
                                 <p className="text-2xl text-white">{time === "24h" ? "+$1 743.96" : "-$1,743.96"}</p>
                                 <p>Performance Today</p>
                             </div>
-                            <div className="text-2xl">+1.14%</div>
+                            <div className="text-2xl">{ time === "24h" ? "+1.14%" : "-1.14%"}</div>
+
                         </div>
 
                         <div className={`${time === "24h" ? "bg-[#79EA86]" : "bg-[#e75757]"} p-5 text-white rounded-lg w-full flex items-center justify-between`}>
@@ -43,7 +44,7 @@ export default function PagePortofolio() {
                                 <p className="text-2xl text-white">{time === "24h" ? "+$1 743.96" : "-$1,743.96"}</p>
                                 <p>Overall Return</p>
                             </div>
-                            <div className="text-2xl">+1.14%</div>
+                            <div className="text-2xl">{ time === "24h" ? "+1.14%" : "-1.14%"}</div>
                         </div>
                     </div>
                 </div>

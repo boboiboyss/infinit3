@@ -76,7 +76,7 @@ export default function PageTransaction() {
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="space-y-2">
                     {transactions.map((transaction, index) => (
                         <tr
                             key={index}
