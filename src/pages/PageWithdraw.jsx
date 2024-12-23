@@ -12,6 +12,7 @@ function PageWithdraw() {
     const [isDone, setIsDone] = useState(false);
     const [no, setNo] = useState(0);
     const [activeButton, setActiveButton] = useState(25);
+    const total = 500;
 
     const handleClick = (percentage) => {
         setActiveButton(percentage);
@@ -25,11 +26,6 @@ function PageWithdraw() {
 
     const closeModal = () => {
         setIsOpenModal(false)
-    }
-
-    const handleDone = (event) => {
-        event.preventDefault();
-        navigate('/home')
     }
 
     const openModal2 = () => {
@@ -103,7 +99,7 @@ function PageWithdraw() {
                            </div>
                            <div className="right">
                                <div className="flex items-center space-x-3">
-                                  <h1 className="text-3xl font-bold">500</h1>
+                                  <h1 className="text-3xl font-bold">{total}</h1>
                                   <p className="text-xl">USDT</p>
                                </div>
                            </div>
@@ -119,7 +115,7 @@ function PageWithdraw() {
                            </div>
                            <div className="right">
                                <div className="flex items-center space-x-3">
-                                  <h1 className="text-3xl font-bold">125</h1>
+                                  <h1 className="text-3xl font-bold">{(total * activeButton) / 100}</h1>
                                   <p className="text-xl">USDT</p>
                                </div>
                            </div>

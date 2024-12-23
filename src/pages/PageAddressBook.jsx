@@ -1,17 +1,26 @@
 import product from '../assets/product.jpeg'
 import metamask from  '../assets/metamaskwallet.png';
+import React, {useState} from  'react'
 import okx from '../assets/okxwallet.jpeg';
 import coin98 from '../assets/coin98.png';
 import defi from '../assets/defiwallet.png';
 import wallet from '../assets/walletconnect.png';
 import bitget from '../assets/bitget.png';
+import ModalAddressBook from '../components/modal/ModalAddressBook';
+import { FaUsersGear } from 'react-icons/fa6';
 
 export default function PageAddressBook() {
+  const [isOpenModal, setIsOpenModal] = useState(false)
+
+
+  const openModal = () => setIsOpenModal(true);
+  const closeModal = () => setIsOpenModal(false)
+
   return (
     <div className="min-h-min">
         <div className='flex items-center justify-between mb-3'>
             <h1 className="text-2xl font-bold mb-3">Address Book</h1>
-            <button className="bg-black text-white py-3 px-5  text-center rounded-xl">Add Wallet</button>
+            <button onClick={openModal} className="bg-black text-white py-3 px-5  text-center rounded-xl">Add Wallet</button>
 
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -147,6 +156,7 @@ export default function PageAddressBook() {
                 </div>
             </div>
         </div>
+        <ModalAddressBook isOpen={isOpenModal} onClose={closeModal} />
     </div>
   );
 }

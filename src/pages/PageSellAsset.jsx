@@ -12,6 +12,7 @@ function PageSellAsset() {
     const [isDone, setIsDone] = useState(false);
     const [no, setNo] = useState(0);
     const [activeButton, setActiveButton] = useState(25);
+    const total = 500;
 
     const handleClick = (percentage) => {
         setActiveButton(percentage);
@@ -42,7 +43,7 @@ function PageSellAsset() {
         <div className="min-h-screen min-w-full">
             <div className="flex items-center justify-between w-full h-full">
                 <div className="left w-1/2 h-screen bg-white p-8">
-                  <Link to={'/login'}>
+                  <Link to={'/'}>
                      <img src={logo} alt="logo" className="h-16" />
                   </Link>
                    <div className="flex items-center space-x-3 mb-4">
@@ -119,7 +120,7 @@ function PageSellAsset() {
                            </div>
                            <div className="right">
                                <div className="flex items-center space-x-3">
-                                  <h1 className="text-3xl font-bold">125</h1>
+                                  <h1 className="text-3xl font-bold">{(total * activeButton) / 100}</h1>
                                   <p className="text-xl">USDT</p>
                                </div>
                            </div>
@@ -153,8 +154,7 @@ function PageSellAsset() {
                         </div>
                     }
                     <div className='flex justify-center items-center mt-9'>
-
-                            <button onClick={openModal2} className="text-white bg-black text-center p-5 w-full rounded-xl mt-7">Sell</button>
+                        <button onClick={openModal2} className="text-white bg-black text-center p-5 w-full rounded-xl mt-7">Sell</button>
                     </div>
 
                     </div>

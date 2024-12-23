@@ -21,7 +21,7 @@ export default function PageTransaction() {
         {
             id:2,
             time: "2024-12-17 18:00",
-            type: "Deposit",
+            type: "Buy",
             wallet: "Spot Wallet",
             asset: "ETH",
             amount: "0,00114612",
@@ -33,7 +33,7 @@ export default function PageTransaction() {
         {   
             id:3,
             time: "2024-12-17 18:00",
-            type: "Deposit",
+            type: "Sell",
             wallet: "Spot Wallet",
             asset: "XRP",
             amount: "0,00114612",
@@ -45,7 +45,7 @@ export default function PageTransaction() {
         {
             id:4,
             time: "2024-12-17 18:00",
-            type: "Deposit",
+            type: "Withdraw",
             wallet: "Spot Wallet",
             asset: "USDT",
             amount: "0,00114612",
@@ -63,7 +63,7 @@ export default function PageTransaction() {
     return (
         <div className="min-h-full">
             <h1 className="text-2xl font-bold mb-6">Transaction History</h1>
-            <table className="table-auto w-full text-center">
+            <table className="table-fixed w-full text-center mt-8 mb-4">
                 <thead className="border-y border-black">
                     <tr>
                         <th>Time</th>
@@ -81,7 +81,7 @@ export default function PageTransaction() {
                         <tr
                             key={index}
                             onClick={() => handleTransactionDetail(transaction.id)}
-                            className="cursor-pointer"
+                            className={`cursor-pointer ${index % 2 == 0 ? "bg-gray-200" : "bg-white"} font-semibold`}
                         >
                             <td>{transaction.time}</td>
                             <td>{transaction.type}</td>

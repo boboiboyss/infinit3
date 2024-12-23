@@ -14,6 +14,7 @@ const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, 
 
   const [isOpened, setIsOpened] = useState(false);
   const [transactionStep, setTransactionStep] = useState(0+no);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
    const wallets = [
@@ -29,7 +30,8 @@ const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, 
     if(transactionStep >= 1) {
         setTimeout(() => {
             setIsOpened(true);
-        }, 500);
+            setLoading(false)
+        }, 1000);
     }
   }, [transactionStep]);
 
@@ -78,6 +80,16 @@ const ModalWithdraw = ({ isOpen, onClose, isDone, setIsDone, setSelectedWallet, 
             transactionStep === 0 && (
             <div className="w-full">
                 <h1 className="text-lg font-semibold text-center mb-8">Choose Wallet</h1>
+
+                {/* {loading && (
+                  <div className="mt-4">
+                    <div className="w-8 h-8 border-4 border-blue-500 border-dashed rounded-full animate-spin border-t-transparent"></div>
+                  </div>
+                )}   {/* {loading && (
+                  <div className="mt-4">
+                    <div className="w-8 h-8 border-4 border-blue-500 border-dashed rounded-full animate-spin border-t-transparent"></div>
+                  </div>
+                )} */}
                 <div className='content flex flex-col space-y-2'>
                 {wallets.map((wallet, index) => (
                 <button key={index} onClick={() => handleSelectedWallet({

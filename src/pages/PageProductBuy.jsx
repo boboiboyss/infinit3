@@ -39,7 +39,7 @@ function PageProductBuy() {
         <div className="min-h-screen min-w-full">
             <div className="flex items-center justify-between w-full h-full">
                 <div className="left w-1/2 h-screen bg-white p-8">
-                  <Link to={'/login'}>
+                  <Link to={'/'}>
                      <img src={logo} alt="logo" className="h-16" />
                   </Link>
                    <div className="flex items-center space-x-3 mb-4">
