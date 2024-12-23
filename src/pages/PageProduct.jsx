@@ -34,6 +34,10 @@ const navigate = useNavigate();
     navigate('/buy-asset');
 }
 
+const handleDetailProduct = () => {
+    navigate('/product/1')
+}
+
 
   const openModalTermsWD = () => setIsModalTermsWD(true);
   const openModalWalletConnected = () => setIsModalWalletConnectedOpen(true);
@@ -46,7 +50,7 @@ const navigate = useNavigate();
     <div className="min-h-screen">
       <h1 className="text-2xl font-bold mb-3">Product</h1>
         <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl p-4 border-[1px] border-black">
+            <div onClick={handleDetailProduct} className="rounded-xl p-4 border-[1px] border-black hover:cursor-pointer">
                 <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center space-x-4">
                         <img
@@ -89,7 +93,7 @@ const navigate = useNavigate();
                     </div>
                 </div>
             </div>
-           <div className="rounded-xl p-4 border-[1px] border-black">
+           <div onClick={handleDetailProduct} className="rounded-xl p-4 border-[1px] border-black hover:cursor-pointer">
                 <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center space-x-4">
                         <img
@@ -132,7 +136,7 @@ const navigate = useNavigate();
                     </div>
                 </div>
             </div>
-              <div className="rounded-xl p-4 border-[1px] border-black">
+              <div onClick={handleDetailProduct} className="rounded-xl p-4 border-[1px] border-black hover:cursor-pointer">
                 <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center space-x-4">
                         <img
@@ -175,7 +179,7 @@ const navigate = useNavigate();
                     </div>
                 </div>
             </div>
-            <div className="rounded-xl p-4 border-[1px] border-black">
+            <div onClick={handleDetailProduct} className="rounded-xl p-4 border-[1px] border-black hover:cursor-pointer">
                 <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center space-x-4">
                         <img
