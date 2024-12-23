@@ -9,11 +9,11 @@ import bitget from '../assets/bitget.png';
 export default function PageAddressBook() {
   return (
     <div className="min-h-min">
-      <h1 className="text-2xl font-bold mb-3">Address Book</h1>
-      <h1 className="text-2xl font-bold mb-2">Allowlisted Wallets</h1>
-      <p className="mb-2">
-        Allowlisted wallets can invest using supported stablecoins and receive Infinit3 tokenized assets. When a new wallet is added, please allow up to 24 hours for it to be approved for use.
-      </p>
+        <div className='flex items-center justify-between mb-3'>
+            <h1 className="text-2xl font-bold mb-3">Address Book</h1>
+            <button className="bg-black text-white py-3 px-5  text-center rounded-xl">Add Wallet</button>
+
+        </div>
         <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl p-4 border-[1px] border-black">
             <div className="flex mb-4">

@@ -11,7 +11,7 @@ export default function PageBankDetails(){
     }
     return (
         <div className="min-h-full">
-           <div className='flex items-center justify-between my-2'>
+           <div className='flex items-center justify-between mb-3'>
              <h1 className="text-2xl font-bold mb-3">Bank Details</h1>
              <div className='flex justify-center items-center mt-auto'>
                 <button onClick={handleAddBankAccount} className="bg-black text-white py-3 px-5  text-center rounded-xl">Add Bank Account</button>

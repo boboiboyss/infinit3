@@ -16,7 +16,7 @@ const navigate = useNavigate();
         // event.preventDefault();
 
         localStorage.setItem('isLoggedIn', 'true')
-        navigate('/product');
+        navigate('/');
     }
 
   return (
