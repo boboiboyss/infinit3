@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import product from '../assets/product.jpeg'
 import ModalKYC from '../components/modal/ModalKCY';
 import ModalTerms from '../components/modal/ModalTerms';
+import ModalTermsWD from '../components/modal/ModalTermsWD';
 
 function PageHome() {
 const [isModal, setIsmodal] = useState(false);
@@ -12,6 +13,8 @@ const [isModalWalletConnectedOpen, setIsModalWalletConnectedOpen] = useState(fal
 const [isModalKYC, setIsModalKYC] = useState(false)
 const [isModalTerms, setIsModalTerms] = useState(false)
 const [selectedWallet, setSelectedWallet] = useState(null);
+const [isModalTermsWD, setIsModalTermsWD] = useState(false)
+const [btnWD, setBtnWD] = useState(false);
 
 const navigate = useNavigate();
 
@@ -31,10 +34,13 @@ const navigate = useNavigate();
     navigate('/product-buy');
 }
 
+
+  const openModalTermsWD = () => setIsModalTermsWD(true);
   const openModalWalletConnected = () => setIsModalWalletConnectedOpen(true);
   const closeModalWalletConnected = () => setIsModalWalletConnectedOpen(false);
   const closeModalKYC = () => setIsModalKYC(false)
   const closeModalTerms = () => setIsModalTerms(false)
+  const closeModalTermsWD = () => setIsModalTermsWD(false)
 
   return (
     <div className="min-h-screen">
@@ -53,9 +59,19 @@ const navigate = useNavigate();
                             <p>Ondo US Dollar Yield Token</p>
                         </div>
                     </div>
-                    <button  onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
+                    <div className='space-x-3'>
+                       <button  onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
                         Invest
-                    </button>
+                        </button>
+
+                    {
+                        btnWD && (
+                        <button  onClick={openModalTermsWD} className="bg-black text-white px-4 py-2 rounded-md">
+                            Withdraw
+                        </button>
+                        )
+                    }
+                    </div>
                 </div>
                 <hr className='border-[1px] border-black my-4'/>
                 <div className="space-y-2">
@@ -86,9 +102,19 @@ const navigate = useNavigate();
                             <p>Ondo US Dollar Yield Token</p>
                         </div>
                     </div>
-                    <button onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
+                      <div className='space-x-3'>
+                       <button  onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
                         Invest
-                    </button>
+                        </button>
+
+                    {
+                        btnWD && (
+                        <button  onClick={openModalTermsWD} className="bg-black text-white px-4 py-2 rounded-md">
+                            Withdraw
+                        </button>
+                        )
+                    }
+                    </div>
                 </div>
                 <hr className='border-[1px] border-black my-4'/>
                 <div className="space-y-2">
@@ -119,9 +145,19 @@ const navigate = useNavigate();
                             <p>Ondo US Dollar Yield Token</p>
                         </div>
                     </div>
-                    <button onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
+                    <div className='space-x-3'>
+                       <button  onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
                         Invest
-                    </button>
+                        </button>
+
+                    {
+                        btnWD && (
+                        <button  onClick={openModalTermsWD} className="bg-black text-white px-4 py-2 rounded-md">
+                            Withdraw
+                        </button>
+                        )
+                    }
+                    </div>
                 </div>
                 <hr className='border-[1px] border-black my-4'/>
                 <div className="space-y-2">
@@ -152,9 +188,19 @@ const navigate = useNavigate();
                             <p>Ondo US Dollar Yield Token</p>
                         </div>
                     </div>
-                    <button onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
+                       <div className='space-x-3'>
+                       <button  onClick={handleProductBuy} className="bg-black text-white px-4 py-2 rounded-md">
                         Invest
-                    </button>
+                        </button>
+
+                    {
+                        btnWD && (
+                        <button  onClick={openModalTermsWD} className="bg-black text-white px-4 py-2 rounded-md">
+                            Withdraw
+                        </button>
+                        )
+                    }
+                    </div>
                 </div>
                 <hr className='border-[1px] border-black my-4'/>
                 <div className="space-y-2">
@@ -179,7 +225,8 @@ const navigate = useNavigate();
         <ModalWalletConnected isOpen={isModalWalletConnectedOpen} onClose={closeModalWalletConnected} openKYC={() => setIsModalKYC(true)} wallet={selectedWallet} />
 
         <ModalKYC isOpen={isModalKYC} onClose={closeModalKYC} openModalTerms={setIsModalTerms} />
-        <ModalTerms isOpen={isModalTerms} onClose={closeModalTerms} />
+        <ModalTerms isOpen={isModalTerms} onClose={closeModalTerms} setBtnWD={setBtnWD} />
+        <ModalTermsWD isOpen={isModalTermsWD} onClose={closeModalTermsWD} />
         
     </div>
   );

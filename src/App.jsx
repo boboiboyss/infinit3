@@ -12,6 +12,11 @@ import PageContactSupport from './pages/PageContactSupport';
 import PageProductBuy from './pages/PageProductBuy';
 import PagePortofolio from './pages/PagePortofolio';
 import PageTransaction from './pages/PageTransaction';
+import PageAddBankAccount from './pages/PageAddBankAccount';
+import PageWithdraw from './pages/PageWithdraw';
+import PageTransactionDetail from './pages/PageTransactionDetail';
+import PageNotFound from './pages/PageNotFound';
+import PageProductDetail from './pages/ProductDetail';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
@@ -40,9 +45,15 @@ function App() {
             <Route path="contact-support" element={<PageContactSupport />} />
             <Route path="portofolio" element={<PagePortofolio />} />
             <Route path="transaction" element={<PageTransaction />} />
+            <Route path='add-bank-account' element={<PageAddBankAccount />} />
+            <Route path='transaction/:id' element={<PageTransactionDetail />} />
+            <Route path='home/:id' element={<PageProductDetail />} />
+            
           </Route>
-          <Route path='/product-buy' element={<PageProductBuy />} />
+            <Route path='withdraw' element={<PageWithdraw /> } />
+          <Route path='/product-buy' element={<PageProductBuy />} />4
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );

@@ -13,10 +13,12 @@ import accountSidebar from '../assets/account-sidebar.png'
 import contactSidebar from '../assets/contact-sidebar.png'
 import portoSidebar from '../assets/porto-sidebar.png'
 import transactionSidebar from '../assets/transaction-sidebar.png'
+import { useParams } from "react-router-dom";
 
 
 export default function Sidebar() {
   const location = useLocation();
+  const {id} = useParams();
   console.log("Current Path:", location.pathname);
 
 
@@ -27,11 +29,10 @@ export default function Sidebar() {
           <Link
             to="/home"
             className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname === "/home"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3" :  location.pathname === "/"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3" 
+              location.pathname === "/home" || location.pathname === `/home/${id}` || location.pathname === "/"
+                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={productSidebar} alt="product-sidebar" className="h-8"  />
             Product
@@ -42,7 +43,7 @@ export default function Sidebar() {
               location.pathname === "/address-book"
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={addressSidebar} alt="address-sidebar" className="h-8" />
             Address Book
@@ -50,10 +51,10 @@ export default function Sidebar() {
           <Link
             to="/bank-details"
             className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/bank-details"
+              location.pathname == "/bank-details" || location.pathname == "/add-bank-account"
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={bankSidebar} alt="bank-sidebar" className="h-8" />
              Bank Details
@@ -64,7 +65,7 @@ export default function Sidebar() {
               location.pathname == "/documents"
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={documentSidebar} alt="document-sidebar" className="h-8" />
              Documents
@@ -75,7 +76,7 @@ export default function Sidebar() {
               location.pathname == "/account-settings"
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={accountSidebar} alt="account-sidebar" className="h-8" />
              Account Settings
@@ -86,7 +87,7 @@ export default function Sidebar() {
               location.pathname == "/contact-support"
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={contactSidebar} alt="contact-sidebar" className="h-8" />
              Contact Support
@@ -97,7 +98,7 @@ export default function Sidebar() {
               location.pathname == "/portofolio"
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={portoSidebar} alt="contact-sidebar" className="h-8" />
              Portofolio
@@ -106,10 +107,10 @@ export default function Sidebar() {
           <Link
             to="/transaction"
             className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/transaction"
+              location.pathname == "/transaction" || location.pathname== `/transaction/${id}`
                 ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
                 : "text-muted-foreground"
-            } transition-all hover:text-primary`}
+            } transition-all hover:text-primary font-bold`}
           >
             <img src={transactionSidebar} alt="contact-sidebar" className="h-8" />
              Transaction

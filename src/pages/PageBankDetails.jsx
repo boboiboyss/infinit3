@@ -1,13 +1,22 @@
-import product from '../assets/product.jpeg'
 import logoBCA from '../assets/bank-bca.png'
 import logoBNI from '../assets/bank-bni.png'
 import logoBRI from '../assets/bank-bri.png'
-import logoMANDIRI from '../assets/bank-mandiri.png' 
+import logoMANDIRI from '../assets/bank-mandiri.png'
+import { useNavigate } from 'react-router-dom' 
 
 export default function PageBankDetails(){
+    const navigate = useNavigate();
+    const handleAddBankAccount = () => {
+        navigate('/add-bank-account')
+    }
     return (
         <div className="min-h-full">
-          <h1 className="text-2xl font-bold mb-3">Bank Details</h1>
+           <div className='flex items-center justify-between my-2'>
+             <h1 className="text-2xl font-bold mb-3">Bank Details</h1>
+             <div className='flex justify-center items-center mt-auto'>
+                <button onClick={handleAddBankAccount} className="bg-black text-white py-3 px-5  text-center rounded-xl">Add Bank Account</button>
+             </div>
+           </div>          
            <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl p-4 border-[1px] border-black">
             <div className="flex mb-4">

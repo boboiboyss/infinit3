@@ -15,7 +15,7 @@ import iconProtected from '../../assets/icon-protected.png'
 import iconLaw from '../../assets/icon-laws.png'
 import iconWarning from '../../assets/icon-warning.png'
 
-const ModalTerms = ({ isOpen, onClose }) => {
+const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
   if (!isOpen) return null;
    const [action, setAction] = useState('modalTerms1')
    const [cek, setCek] = useState(false)
@@ -25,8 +25,10 @@ const ModalTerms = ({ isOpen, onClose }) => {
    const nextModalTerms4 = () => setAction('modalTerms4');
    const nextModalTerms5 = () => setAction('modalTerms5');
    const nextModalTerms6 = () => setAction('modalTerms6');
-   const closeModal = () => onClose();
-
+   const closeModal = () => {
+    setBtnWD(true)
+    onClose();
+   }
    const handleCheckboxChange = (event) => {
     setCek(event.target.checked);
    };
@@ -81,7 +83,7 @@ const ModalTerms = ({ isOpen, onClose }) => {
                 {
                     action == "modalTerms2" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4'>The party conducting tokenization must prove lawful ownership of the asset or process the legal authority to tokenize it.</p>
+                            <p className='mb-4 text-justify'>The party conducting tokenization must prove lawful ownership of the asset or process the legal authority to tokenize it.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconVerified} alt='icon-verified' className='w-9 h-9' />
                                 <span>Ownership documents, such as property deeds, stock certificates, or vehicle registration, must be verified by competent authorities.</span>
