@@ -4,7 +4,7 @@ import iconNotif from '../assets/icon-notif.png'
 import profile from '../assets/profile.png'
 export default function Headers() {
     return (
-      <header className="bg-white mb-3">
+      <header className="bg-white mb-6">
         <div className="flex items-center justify-between">
           <div className='flex items-center justify-center gap-x-10'>
             <Link to={'/'}>
