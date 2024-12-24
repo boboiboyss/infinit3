@@ -32,7 +32,7 @@ export default function PagePortofolio() {
                     <div className="flex item-center w-2/3 space-x-14">
                         <div className={`${time === "24h" ? "bg-[#79EA86]" : "bg-[#e75757]"} p-5 text-white  rounded-lg w-full flex items-center justify-between`}>
                             <div className="flex flex-col space-y-3">
-                                <p className="text-2xl text-white">{time === "24h" ? "+$1 743.96" : "-$1,743.96"}</p>
+                                <p className="text-2xl text-white">{time === "24h" ? "+$1,743.96" : "-$1,743.96"}</p>
                                 <p>Performance Today</p>
                             </div>
                             <div className="text-2xl">{ time === "24h" ? "+1.14%" : "-1.14%"}</div>
@@ -41,7 +41,7 @@ export default function PagePortofolio() {
 
                         <div className={`${time === "24h" ? "bg-[#79EA86]" : "bg-[#e75757]"} p-5 text-white rounded-lg w-full flex items-center justify-between`}>
                             <div className="flex flex-col space-y-3">
-                                <p className="text-2xl text-white">{time === "24h" ? "+$1 743.96" : "-$1,743.96"}</p>
+                                <p className="text-2xl text-white">{time === "24h" ? "+$1,743.96" : "-$1,743.96"}</p>
                                 <p>Overall Return</p>
                             </div>
                             <div className="text-2xl">{ time === "24h" ? "+1.14%" : "-1.14%"}</div>
@@ -77,89 +77,89 @@ export default function PagePortofolio() {
                 <div className="asset">
                     <h1 className="text-lg font-semibold">Assets</h1>
                     <table class="table-auto w-full text-center">
-                <thead className="border-y border-black ">
-                    <tr>
-                    <th>Assets</th>
-                    <th>24H Price</th>
-                    <th>Balance</th>
-                    <th>Avg. Buy Price</th>
-                    <th>Profit/Loss</th>
-                    <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="font-semibold">
-                        <td>
-                            <div className="flex items-center justify-center space-x-2">
-                                <div className="border border-black rounded-full">
-                                <img src={iconEthereum} alt="icon-ethereum" className="h-10 w-10" />
+                        <thead className="border-y border-black ">
+                            <tr>
+                                <th>Assets</th>
+                                <th>24H Price</th>
+                                <th>Balance</th>
+                                <th>Avg. Buy Price</th>
+                                <th>Profit/Loss</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="font-semibold">
+                                <td>
+                                    <div className="flex items-center justify-center space-x-2">
+                                        <div className="border border-black rounded-full">
+                                        <img src={iconEthereum} alt="icon-ethereum" className="h-10 w-10" />
 
-                                </div>
-                                <div className="flex flex-col">
-                                    <span className="font-semibold">Asset Name</span>
-                                    <span className="text-left">AN</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex flex-col items-center justify-center text-center">
-                              <span>$14,000.00</span>
-                              <div className="flex items-center  space-x-1">
-                                    <img src={iconTriangleGreen} alt="icon-triangle-green" className="h-3 w-3" />
-                                    <span className="text-[#79EA86] text-sm">5.2%</span>
-                              </div>
-                            </div>
-                        </td>
-                        <td>$14,000.00</td>
-                        <td>$14,000.00</td>
-                        <td>
-                             <div className="flex flex-col items-center justify-center text-center">
-                              <span className="text-[#79EA86]">$14,000.00</span>
-                              <div className="flex items-center  space-x-1">
-                                    <img src={iconTriangleGreen} alt="icon-triangle-green" className="h-3 w-3" />
-                                    <span className="text-[#79EA86] text-sm">5.2%</span>
-                              </div>
-                            </div>
-                        </td>
-                        <td>$14,000.00</td>
-                    </tr>
-                    <tr className="font-semibold">
-                        <td>
-                            <div className="flex items-center justify-center space-x-2">
-                                <div className="border border-black rounded-full">
-                                <img src={iconEthereum} alt="icon-ethereum" className="h-10 w-10" />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="font-semibold">Asset Name</span>
+                                            <span className="text-left">AN</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="flex flex-col items-center justify-center text-center">
+                                    <span>$14,000.00</span>
+                                    <div className="flex items-center  space-x-1">
+                                            <img src={iconTriangleGreen} alt="icon-triangle-green" className="h-3 w-3" />
+                                            <span className="text-[#79EA86] text-sm">5.2%</span>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td>$14,000.00</td>
+                                <td>$14,000.00</td>
+                                <td>
+                                    <div className="flex flex-col items-center justify-center text-center">
+                                    <span className="text-[#79EA86]">+$14,000.00</span>
+                                    <div className="flex items-center  space-x-1">
+                                            <img src={iconTriangleGreen} alt="icon-triangle-green" className="h-3 w-3" />
+                                            <span className="text-[#79EA86] text-sm">5.2%</span>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td>+$14,000.00</td>
+                            </tr>
+                            <tr className="font-semibold">
+                                <td>
+                                    <div className="flex items-center justify-center space-x-2">
+                                        <div className="border border-black rounded-full">
+                                        <img src={iconEthereum} alt="icon-ethereum" className="h-10 w-10" />
 
-                                </div>
-                                <div className="flex flex-col">
-                                    <span className="font-semibold">Asset Name</span>
-                                    <span className="text-left">AN</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                              <div className="flex flex-col items-center justify-center text-center">
-                              <span>$14,000.00</span>
-                              <div className="flex items-center  space-x-1">
-                                    <img src={iconTriangleRed} alt="icon-triangle-green" className="h-3 w-3 rotate-180" />
-                                    <span className="text-[#e75757] text-sm">5.2%</span>
-                              </div>
-                            </div>
-                        </td>
-                        <td>$14,000.00</td>
-                        <td>$14,000.00</td>
-                        <td>
-                            <div className="flex flex-col items-center justify-center text-center">
-                              <span className="text-[#e75757]">$14,000.00</span>
-                              <div className="flex items-center  space-x-1">
-                                    <img src={iconTriangleRed} alt="icon-triangle-green" className="h-3 w-3 rotate-180" />
-                                    <span className="text-[#e75757] text-sm">5.2%</span>
-                              </div>
-                            </div>
-                        </td>
-                        <td>$14,000.00</td>
-                    </tr>
-                </tbody>
-            </table>
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="font-semibold">Asset Name</span>
+                                            <span className="text-left">AN</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="flex flex-col items-center justify-center text-center">
+                                    <span>$14,000.00</span>
+                                    <div className="flex items-center  space-x-1">
+                                            <img src={iconTriangleRed} alt="icon-triangle-green" className="h-3 w-3 rotate-180" />
+                                            <span className="text-[#e75757] text-sm">5.2%</span>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td>$14,000.00</td>
+                                <td>$14,000.00</td>
+                                <td>
+                                    <div className="flex flex-col items-center justify-center text-center">
+                                    <span className="text-[#e75757]">+$14,000.00</span>
+                                    <div className="flex items-center  space-x-1">
+                                            <img src={iconTriangleRed} alt="icon-triangle-green" className="h-3 w-3 rotate-180" />
+                                            <span className="text-[#e75757] text-sm">5.2%</span>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td>+$14,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
