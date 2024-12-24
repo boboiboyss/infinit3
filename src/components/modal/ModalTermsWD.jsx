@@ -47,7 +47,7 @@ const ModalTermsWD = ({ isOpen, onClose }) => {
             {action === "modalTerms2"
                 ? "Withdrawal Limits and Thresholds"
                 : action === "modalTerms3"
-                ? "Transparency and Public Information"
+                ? "Agreement Confirmation"
                 : action === "modalTerms4"
                 ? "Technology and Blockchain Security"
                 : action === "modalTerms5"
