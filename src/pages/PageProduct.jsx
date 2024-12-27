@@ -83,6 +83,24 @@ const handleDetailProduct = () => {
     minimumPurchase: "500 USDC",
     image: product,
   },
+   {
+    id: 5,
+    name: "Insights",
+    description: "Ondo US Dollar Yield Token",
+    status: "No Access",
+    eligibility: "Non-US Individuals & Organizations",
+    minimumPurchase: "500 USDC",
+    image: product,
+  },
+   {
+    id: 6,
+    name: "Insights",
+    description: "Ondo US Dollar Yield Token",
+    status: "No Access",
+    eligibility: "Non-US Individuals & Organizations",
+    minimumPurchase: "500 USDC",
+    image: product,
+  },
 ];
   
 
@@ -147,9 +165,7 @@ const handleDetailProduct = () => {
         </div>
 
         <ModalWallet isOpen={isModal} onClose={closeModal} openWalletConnected={openModalWalletConnected} setSelectedWallet={setSelectedWallet}/>
-
         <ModalWalletConnected isOpen={isModalWalletConnectedOpen} onClose={closeModalWalletConnected} openKYC={() => setIsModalKYC(true)} wallet={selectedWallet} />
-
         <ModalKYC isOpen={isModalKYC} onClose={closeModalKYC} openModalTerms={setIsModalTerms} />
         <ModalTerms isOpen={isModalTerms} onClose={closeModalTerms} setBtnWD={setBtnWD} />
         <ModalTermsWD isOpen={isModalTermsWD} onClose={closeModalTermsWD} />

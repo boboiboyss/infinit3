@@ -130,7 +130,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                          <div class="relative w-full rounded-xl">
                             <select
                                 id="last-name"
-                                class="peer w-full bg-white border border-gray-300 rounded-md px-3 pt-3 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700"
+                                className="w-full bg-white border border-gray-300 rounded-md px-3 pt-3 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700"
                             >
                                 <option>Likely Purchase Amount</option>
                                 <option value="1">1</option>
@@ -169,16 +169,14 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
 
                          <div class="relative w-full rounded-xl">
                             <p>List any other countries in which you have citizenship</p>
-                            <select
-                                id="last-name"
-                                class="peer rounded-lg w-full border bg-white border-gray-300 px-3 py-4 text-sm focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700"
-                            >
-                                <option>Type country name(s)</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
+                              <div class="relative w-full rounded-xl mb-2">
+                                <input
+                                    type="text"
+                                    placeholder="Type country name(s)"
+                                    id="last-name"
+                                    class="peer w-full border border-gray-300 rounded-md px-3 pt-3 pb-2 text-sm placeholder:text-black focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700"
+                                />
+                              </div>
                         </div>
 
                          <div className='flex justify-center items-center mt-auto'>

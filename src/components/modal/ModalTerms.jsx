@@ -65,7 +65,7 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                 {
                     action == "modalTerms1" && (
                         <div className='flex flex-col h-full'>
-                            <p className='mb-4 text-justify'>Asset tokenization must comply with the laws and regulations applicable in the relevant jurisdiction. Asset owners must adhere to legal frameworks governing securities, digital assets, and investor protection</p>
+                            <p className='mb-4 text-justify'>Asset tokenization must comply with the laws and regulations applicable in the relevant jurisdiction. Asset owners must adhere to legal framework governing securities, digital assets, and investor protection</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconLegal} alt='icon-legal' className='w-9 h-9' />
                                 <span>The owner must ensure that the asset being tokenized has a clear legal status and is free from disputes, cush as liens, third-party claims, or ownership issues.</span>

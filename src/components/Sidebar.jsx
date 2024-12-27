@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import { RiHandCoinLine } from "react-icons/ri";
 import { BiBook } from "react-icons/bi";
 import { CiBank } from "react-icons/ci";
@@ -13,13 +13,18 @@ import accountSidebar from '../assets/account-sidebar.png'
 import contactSidebar from '../assets/contact-sidebar.png'
 import portoSidebar from '../assets/porto-sidebar.png'
 import transactionSidebar from '../assets/transaction-sidebar.png'
-import { useParams } from "react-router-dom";
+import iconLogout from '../assets/icon-logout.png'
 
 
 export default function Sidebar() {
   const location = useLocation();
   const {id} = useParams();
-  console.log("Current Path:", location.pathname);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+
+    Navigate('/login');
+  }
 
 
   return (
@@ -114,6 +119,19 @@ export default function Sidebar() {
           >
             <img src={transactionSidebar} alt="contact-sidebar" className="h-8" />
              Transaction
+          </Link>
+
+          <Link
+            to="/"
+            onClick={handleLogout}
+            className={`flex items-center gap-3 rounded-xl py-3 ${
+              location.pathname == "/transaction" || location.pathname== `/transaction/${id}`
+                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
+                : "text-muted-foreground"
+            } transition-all hover:text-primary font-bold`}
+          >
+            <img src={iconLogout} alt="contact-sidebar" className="h-8" />
+             Logout
           </Link>
         </nav>
       </div>
