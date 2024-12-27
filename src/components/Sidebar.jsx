@@ -124,11 +124,7 @@ export default function Sidebar() {
           <Link
             to="/"
             onClick={handleLogout}
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/transaction" || location.pathname== `/transaction/${id}`
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
+            className={`flex items-center gap-3 rounded-xl py-3 transition-all hover:text-primary font-bold`}
           >
             <img src={iconLogout} alt="contact-sidebar" className="h-8" />
              Logout
