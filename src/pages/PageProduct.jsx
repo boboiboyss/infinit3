@@ -107,7 +107,7 @@ const handleDetailProduct = () => {
   return (
     <div className="min-h-screen">
       <h1 className="text-2xl font-bold mb-3">Product</h1>
-        <div className="grid grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
             {products.map((product) => (
         <div
           key={product.id}
@@ -118,16 +118,16 @@ const handleDetailProduct = () => {
               <img
                 src={product.image}
                 alt="Product Icon"
-                className="w-20 h-20 rounded-full"
+                className="w-20 h-20 rounded-full md:w-16 md:h-16"
               />
               <div className="flex flex-col">
-                <p className="text-xl font-bold text-gray-800">
+                <p className="text-xl md:text-base font-bold text-gray-800">
                   {product.name}
                 </p>
-                <p>{product.description}</p>
+                <p className='md:text-sm'>{product.description}</p>
               </div>
             </div>
-            <div className="space-x-3">
+            <div className="space-x-0 min-[620px]:space-x-1 space-y-1 ml-7 sm:space-x-3">
               <button
                 onClick={handleProductBuy}
                 className="bg-black text-white px-4 py-2 rounded-md font-semibold"
@@ -146,7 +146,7 @@ const handleDetailProduct = () => {
             </div>
           </div>
           <hr className="border-[1px] border-black my-4" />
-          <div className="space-y-2">
+          <div className="space-y-2 md:text-sm">
             <div className="flex justify-between">
               <span className="font-bold">Status</span>
               <span>{product.status}</span>

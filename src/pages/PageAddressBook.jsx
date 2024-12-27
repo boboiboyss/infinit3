@@ -10,153 +10,94 @@ import ModalAddressBook from '../components/modal/ModalAddressBook';
 import { FaUsersGear } from 'react-icons/fa6';
 
 export default function PageAddressBook() {
-  const [isOpenModal, setIsOpenModal] = useState(false)
-
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const openModal = () => setIsOpenModal(true);
-  const closeModal = () => setIsOpenModal(false)
+  const closeModal = () => setIsOpenModal(false);
+
+  const walletData = [
+  {
+    id: 1,
+    name: "Metamask",
+    image: metamask,
+    walletName: "Audi's Wallet",
+    publicAddress: "0x12345678987654321",
+    balance: "0.045 ETH",
+  },
+  {
+    id: 2,
+    name: "OKX Wallet",
+    image: okx,
+    walletName: "Audi's Wallet",
+    publicAddress: "0x12345678987654321",
+    balance: "0.045 ETH",
+  },
+  {
+    id: 3,
+    name: "Coin89 Wallet",
+    image: coin98,
+    walletName: "Audi's Wallet",
+    publicAddress: "0x12345678987654321",
+    balance: "0.045 ETH",
+  },
+  {
+    id: 4,
+    name: "DeFi Wallet",
+    image: defi,
+    walletName: "Audi's Wallet",
+    publicAddress: "0x12345678987654321",
+    balance: "0.045 ETH",
+  },
+];
 
   return (
     <div className="min-h-min">
-        <div className='flex items-center justify-between mb-3'>
-            <h1 className="text-2xl font-bold mb-3">Address Book</h1>
-            <button onClick={openModal} className="bg-black text-white py-3 px-5  text-center rounded-xl font-semibold">Add Wallet</button>
+      <div className="flex items-center justify-between mb-3">
+        <h1 className="text-2xl font-bold mb-3">Address Book</h1>
+        <button
+          onClick={openModal}
+          className="bg-black text-white py-3 px-5 text-center rounded-xl font-semibold"
+        >
+          Add Wallet
+        </button>
+      </div>
 
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl p-4 border-[1px] border-black">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {walletData.map((wallet) => (
+          <div key={wallet.id} className="rounded-xl p-4 border-[1px] border-black">
             <div className="flex mb-4">
-            <div className="flex items-center space-x-4 w-full flex-start">
-                
+              <div className="flex items-center space-x-4 w-full flex-start">
                 <img
-                src={metamask}
-                alt="Product Icon"
-                className="w-20 h-20 rounded-full"
+                  src={wallet.image}
+                  alt={`${wallet.name} Icon`}
+                  className="w-20 h-20 rounded-full md:w-16 md:h-16 object-cover xl:w-20 xl:h-20"
                 />
-            
                 <div className="h-full border-l-2 border-black"></div>
-
                 <div className="flex flex-col justify-between w-full">
-                <p className="text-xl font-bold text-gray-800 mb-3">Metamask</p>
-                <div className="space-y-2">
+                  <p className="text-xl md:text-lg xl:text-xl font-bold text-gray-800 mb-3">{wallet.name}</p>
+                  <div className="space-y-2">
                     <div className="flex justify-between">
-                    <span className="font-semibold">Wallet Name</span>
-                    <span>Audi's Wallet</span>
-                    </div>
-                    <div className="flex justify-between">
-                    <span className="font-semibold">Public Address</span>
-                    <span>0x12345678987654321</span>
+                      <span className="font-semibold">Wallet Name</span>
+                      <span>{wallet.walletName}</span>
                     </div>
                     <div className="flex justify-between">
-                    <span className="font-semibold">Balance</span>
-                    <span>0.045 ETH</span>
+                      <span className="font-semibold">Public Address</span>
+                      <span>{wallet.publicAddress}</span>
                     </div>
-                </div>
-                </div>
-            </div>
-            </div>
-            </div>
-
-            <div className="rounded-xl p-4 border-[1px] border-black">
-                <div className="flex mb-4">
-                    <div className="flex items-center space-x-4 w-full flex-start">
-                        
-                    <img
-                       src={okx}
-                        alt="Product Icon"
-                        className="w-20 h-20 rounded-full"
-                        />
-                    
-                        <div className="h-full border-l-2 border-black"></div>
-
-                        <div className="flex flex-col justify-between w-full">
-                        <p className="text-xl font-bold text-gray-800 mb-3">OKX Wallet</p>
-                        <div className="space-y-2">
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Wallet Name</span>
-                            <span>Audi's Wallet</span>
-                            </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Public Address</span>
-                            <span>0x12345678987654321</span>
-                            </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Balance</span>
-                            <span>0.045 ETH</span>
-                            </div>
-                        </div>
-                        </div>
+                    <div className="flex justify-between">
+                      <span className="font-semibold">Balance</span>
+                      <span>{wallet.balance}</span>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+        ))}
+      </div>
 
-            <div className="rounded-xl p-4 border-[1px] border-black">
-                <div className="flex mb-4">
-                    <div className="flex items-center space-x-4 w-full flex-start">
-                        
-                    <img
-                        src={coin98}
-                        alt="Product Icon"
-                        className="w-20 h-20 rounded-full object-cover"
-                        />
-                    
-                        <div className="h-full border-l-2 border-black"></div>
-
-                        <div className="flex flex-col justify-between w-full">
-                        <p className="text-xl font-bold text-gray-800 mb-3">Coin89 Wallet</p>
-                        <div className="space-y-2">
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Wallet Name</span>
-                            <span>Audi's Wallet</span>
-                            </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Public Address</span>
-                            <span>0x12345678987654321</span>
-                            </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Balance</span>
-                            <span>0.045 ETH</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="rounded-xl p-4 border-[1px] border-black">
-                <div className="flex mb-4">
-                    <div className="flex items-center space-x-4 w-full flex-start">
-                        
-                    <img
-                        src={defi}
-                        alt="Product Icon"
-                        className="w-20 h-20 rounded-full"
-                        />
-                    
-                        <div className="h-full border-l-2 border-black"></div>
-
-                        <div className="flex flex-col justify-between w-full">
-                        <p className="text-xl font-bold text-gray-800 mb-3">DeFi Wallet</p>
-                        <div className="space-y-2">
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Wallet Name</span>
-                            <span>Audi's Wallet</span>
-                            </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Public Address</span>
-                            <span>0x12345678987654321</span>
-                            </div>
-                            <div className="flex justify-between">
-                            <span className="font-semibold">Balance</span>
-                            <span>0.045 ETH</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <ModalAddressBook isOpen={isOpenModal} onClose={closeModal} />
+      <ModalAddressBook isOpen={isOpenModal} onClose={closeModal} />
     </div>
   );
 }
+

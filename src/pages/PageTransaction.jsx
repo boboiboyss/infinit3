@@ -62,41 +62,46 @@ export default function PageTransaction() {
 
     return (
         <div className="min-h-full">
-            <h1 className="text-2xl font-bold mb-6">Transaction History</h1>
-            <table className="table-fixed w-full text-center mt-8 mb-4">
-                <thead className="border-y border-black">
-                    <tr>
-                        <th>Time</th>
-                        <th>Type</th>
-                        <th>Deposit Wallet</th>
-                        <th>Asset</th>
-                        <th>Amount</th>
-                        <th>Destination</th>
-                        <th>TxID</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody className="space-y-2">
-                    {transactions.map((transaction, index) => (
-                        <tr
-                            key={index}
-                            onClick={() => handleTransactionDetail(transaction.id)}
-                            className={`cursor-pointer ${index % 2 == 0 ? "bg-gray-200" : "bg-white"} font-semibold`}
-                        >
-                            <td>{transaction.time}</td>
-                            <td>{transaction.type}</td>
-                            <td>{transaction.wallet}</td>
-                            <td>{transaction.asset}</td>
-                            <td>{transaction.amount}</td>
-                            <td>{transaction.destination}</td>
-                            <td>{transaction.txid}</td>
-                            <td className={transaction.statusColor}>
-                                {transaction.status}
-                            </td>
+            <h1 className="text-2xl font-bold lg:mb-6">Transaction History</h1>
+
+            <div className="">
+                <table className="w-full table-auto  overflow-x-auto text-center mt-8 mb-4 border-collapse border border-gray-300">
+                    <thead className="border-y border-black bg-gray-100">
+                        <tr className="text-sm lg:text-base">
+                            <th className="py-2">Time</th>
+                            <th className=" py-2">Type</th>
+                            <th className=" py-2">Deposit Wallet</th>
+                            <th className="py-2">Asset</th>
+                            <th className=" py-2">Amount</th>
+                            <th className=" py-2">Destination</th>
+                            <th className=" py-2">TxID</th>
+                            <th className=" py-2">Status</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {transactions.map((transaction, index) => (
+                            <tr
+                                key={index}
+                                onClick={() => handleTransactionDetail(transaction.id)}
+                                className={`cursor-pointer text-sm lg:text-base ${
+                                    index % 2 === 0 ? "bg-gray-200" : "bg-white"
+                                } font-semibold`}
+                            >
+                                <td className="px-4 py-2">{transaction.time}</td>
+                                <td className="px-4 py-2">{transaction.type}</td>
+                                <td className="px-4 py-2">{transaction.wallet}</td>
+                                <td className="px-4 py-2">{transaction.asset}</td>
+                                <td className="px-4 py-2">{transaction.amount}</td>
+                                <td className="px-4 py-2">{transaction.destination}</td>
+                                <td className="px-4 py-2">{transaction.txid}</td>
+                                <td className={`px-4 py-2 ${transaction.statusColor}`}>
+                                    {transaction.status}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

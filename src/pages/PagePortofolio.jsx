@@ -20,16 +20,16 @@ export default function PagePortofolio() {
             <h1 className="text-2xl font-bold mb-5">Portofolio</h1>
 
             <div className="space-y-2 flex flex-col">
-                <div className="flex items-center justify-between mb-4">
+                <div className="md:flex items-center justify-between mb-4">
                     <div className="flex flex-col space-y-2">
                         <p className="font-semibold">Current Balance</p>
-                        <p className="text-3xl font-semibold">$100,000.00</p>
+                        <p className="md:text-3xl font-semibold">$100,000.00</p>
                         <div className="flex items-center space-x-2">
                            <p className={time === "24h" ? "text-[#79EA86]" : "text-[#e75757]"}>{time === '24h' ? "+$200.00 (20%)" : "-$200.00 (20%)"}</p>
                             <p className="bg-[#E9ECEF] text-black p-[3px] rounded-md font-semibold">{time}</p>
                         </div>
                     </div>
-                    <div className="flex item-center w-2/3 space-x-14">
+                    <div className="md:flex space-y-3 item-center w-2/3 md:space-x-6 md:space-y-0 xl:space-x-16">
                         <div className={`${time === "24h" ? "bg-[#79EA86]" : "bg-[#e75757]"} p-5 text-white  rounded-lg w-full flex items-center justify-between`}>
                             <div className="flex flex-col space-y-3">
                                 <p className="text-2xl text-white">{time === "24h" ? "+$1,743.96" : "-$1,743.96"}</p>
@@ -71,7 +71,7 @@ export default function PagePortofolio() {
                     <img src={iconFullscreen} alt="icon-fullscreen" className="h-9 w-19 absolute right-12 p-1"/>
                     </div>
                    <div className="flex items-center justify-center">
-                       <img src={chart} alt="chart" className=" h-[400px] w-[600px]" /> 
+                       <img src={chart} alt="chart" className=" w-[300px] h-[400px] sm:h-[400px] sm:w-[600px]" /> 
                    </div>
                 </div>
                 <div className="asset">
