@@ -127,7 +127,7 @@ const handleDetailProduct = () => {
                 <p className='md:text-sm'>{product.description}</p>
               </div>
             </div>
-            <div className="space-x-0 min-[620px]:space-x-1 space-y-1 ml-7 sm:space-x-3 md:space-x-0">
+            <div className="space-x-0 min-[620px]:space-x-1 space-y-1 ml-7 sm:space-x-3 md:space-x-0 xl:space-x-1">
               <button
                 onClick={handleProductBuy}
                 className="bg-black text-white px-4 py-2 rounded-md font-semibold"
