@@ -201,7 +201,7 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone, setSelectedWalle
       )}
     </div>
   </div>
-</div>
+    </div>
 
   );
 };

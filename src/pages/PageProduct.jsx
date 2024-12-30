@@ -118,16 +118,16 @@ const handleDetailProduct = () => {
               <img
                 src={product.image}
                 alt="Product Icon"
-                className="w-20 h-20 rounded-full md:w-16 md:h-16"
+                className="w-14 h-14 lg:w-20 lg:h-20 rounded-full md:w-16 md:h-16"
               />
               <div className="flex flex-col">
-                <p className="text-xl md:text-base font-bold text-gray-800">
+                <p className="text-lg md:text-base font-bold text-gray-800">
                   {product.name}
                 </p>
-                <p className='md:text-sm'>{product.description}</p>
+                <p className='text-sm lg:text-base '>{product.description}</p>
               </div>
             </div>
-            <div className="space-x-0 min-[620px]:space-x-1 space-y-1 ml-7 sm:space-x-3 md:space-x-0 xl:space-x-1">
+            <div className="text-sm lg:text-base space-x-0 min-[620px]:space-x-1 space-y-1 ml-7 sm:space-x-3 md:space-x-0 xl:space-x-1">
               <button
                 onClick={handleProductBuy}
                 className="bg-black text-white px-4 py-2 rounded-md font-semibold"
@@ -146,14 +146,14 @@ const handleDetailProduct = () => {
             </div>
           </div>
           <hr className="border-[1px] border-black my-4" />
-          <div className="space-y-2 md:text-sm">
+          <div className="space-y-2 text-sm lg:text-base">
             <div className="flex justify-between">
               <span className="font-bold">Status</span>
               <span>{product.status}</span>
             </div>
             <div className="flex justify-between">
               <span className="font-bold">Eligibility</span>
-              <span>{product.eligibility}</span>
+              <span className='text-end'>{product.eligibility}</span>
             </div>
             <div className="flex justify-between">
               <span className="font-bold">Minimum Purchase</span>

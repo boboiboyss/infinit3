@@ -94,7 +94,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                   action=="modalKYC2" && (
                      <div className='h-full flex flex-col'>
-                        <h1 className='font-bold text-xl mb-4'>Verify Your Identity</h1>
+                        <h1 className='font-bold text-lg lg:text-xl mb-4'>Verify Your Identity</h1>
                         <div class="relative w-full rounded-xl mb-2">
                         <input
                             type="text"
@@ -157,7 +157,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                   action=="modalKYC3" && (
                    <div className='h-full flex flex-col'>
-                      <h1 className='font-bold text-xl mb-4 text-justify'>Please select the country of your citizenship that matches the goverment-issued ID you intend to provide</h1>
+                      <h1 className='font-bold text-lg lg:text-xl mb-4 text-justify'>Please select the country of your citizenship that matches the goverment-issued ID you intend to provide</h1>
                         <div class="relative w-full rounded-xl mb-6">
                             <p className=' text-justify'>In the next step, you will be required to upload a government-issue ID from your country of citizenship. Ensure that the ID matches your current nationally.</p>
                             <select
@@ -195,7 +195,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                    action=="modalKYC4" && (
                     <div className='h-full flex flex-col'>
-                        <h1 className='font-bold text-xl mb-4'>What is the country of your residence ?</h1>
+                        <h1 className='font-bold text-lg lg:text-xl mb-4'>What is the country of your residence ?</h1>
                           <div class="relative w-full rounded-xl mb-3">
                             <p className='text-justify'>This allows us to identify the most appropriate method to verify your identity.</p>
                             <select
@@ -219,7 +219,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                    action=="modalKYC5" && (
                     <div>
-                        <h1 className='font-bold text-xl mb-6'>Upload a photo ID</h1>
+                        <h1 className='font-bold text-lg lg:text-xl mb-6'>Upload a photo ID</h1>
                         <p className='mb-4 text-justify'>For identify verification purposes, we kindly request a photo of your government-issued ID. Please ensure that the ID provided mathces the one associated with your citizenship.</p>
                         <div className='w-full space-y-2'>
                             <p>Choose 1 of the following options</p>
@@ -242,7 +242,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action=="modalKYC6A" && (
                         <div className='h-full flex flex-col'>
-                              <h1 className='font-bold text-xl mb-6'>Passport</h1>
+                              <h1 className='font-bold text-lg lg:text-xl mb-6'>Passport</h1>
                               <p className='mb-4'>Take a clear photo of your entire passport portrait page.</p>
                               <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
@@ -256,7 +256,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action=="modalKYC6B" && (
                         <div className='h-full flex flex-col'>
-                              <h1 className='font-bold text-xl mb-6'>National ID</h1>
+                              <h1 className='font-bold text-lg lg:text-xl mb-6'>National ID</h1>
                               <p className='mb-4'>Take a clear photo of your entire passport portrait page.</p>
                               <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
@@ -270,7 +270,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action=="modalKYC6C" && (
                         <div className='h-full flex flex-col'>
-                              <h1 className='font-bold text-xl mb-6'>Driver License</h1>
+                              <h1 className='font-bold text-lg lg:text-xl mb-6'>Driver License</h1>
                               <p className='mb-4'>Take a clear photo of your entire passport portrait page.</p>
                               <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
@@ -284,7 +284,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action=="modalKYC7" && (
                      <div className='h-full flex flex-col'>
-                              <h1 className='font-bold text-xl mb-6'>Let's make sure you're you</h1>
+                              <h1 className='font-bold text-lg lg:text-xl mb-6'>Let's make sure you're you</h1>
                               <p className='mb-4'>Position yourself in the center of the camera and then more your face left and right to show both sides</p>
                               <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconFace} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
@@ -298,7 +298,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action =="modalKYC8" && (
                         <div className='h-full flex flex-col'>
-                             <h1 className='font-bold text-xl mb-6'>Just the basics</h1>
+                             <h1 className='font-bold text-lg lg:text-xl mb-6'>Just the basics</h1>
                              <p className='mb-4'>Nothing fancy, just a few things to verify your identify</p>
                                <div className='flex item-center justify-between space-x-3 w-1/2'>
                                    <div class="relative w-full rounded-xl mb-2">
@@ -373,10 +373,10 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action =="modalKYC9" && (
                         <div className='flex flex-col h-full'>
-                            <h1 className='font-bold text-xl mb-6'>Identity information submitted</h1>
+                            <h1 className='font-bold text-lg lg:text-xl mb-6'>Identity information submitted</h1>
                             <p>Your identity information is currently under review. You will be contracted via email if any issues arise.</p>
-                            <div className='w-full flex items-center justify-center p-16'>
-                                <img src={iconSuccess} alt='icon-upload-photo' className=' w-30 h-30' />
+                            <div className='w-full flex items-center justify-center p-8 lg:p-16'>
+                                <img src={iconSuccess} alt='icon-upload-photo' className='w-20 h-20 object-cover lg:w-30 lg:h-30' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
                             <button onClick={nextModalKYC10} className="bg-black text-white py-4 px-20 text-center rounded-xl text-sm font-semibold">Next</button>
@@ -387,7 +387,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action == 'modalKYC10' && (
                         <div className='h-full flex flex-col'>
-                            <h1 className='font-bold text-xl mb-6'>Verification Materials Submitted</h1>
+                            <h1 className='font-bold text-lg lg:text-xl mb-6'>Verification Materials Submitted</h1>
                             <p className='text-justify'>Thank you for completing the verification process. We will notify you via email once your submission has been reviewed. In the meantime, you may proceed with the wallet verification.</p>
 
                             <div className='mt-14 w-full rounded-xl p-4 bg-white text-black border-2 border-black mb-3'>
@@ -413,7 +413,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action == 'modalKYC11' && (
                         <div className='h-full flex flex-col'>
-                            <h1 className='font-bold text-xl mb-6'>Add Your Wallet</h1>
+                            <h1 className='font-bold text-lg lg:text-xl mb-6'>Add Your Wallet</h1>
                             <p className='mb-4'>Please enter the Ethereum wallet you will use to receive or redeem USDY</p>
                                 <div class="relative w-full rounded-xl mb-4">
                                     <input
@@ -440,7 +440,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                 {
                     action == "modalKYC12" && (
                         <div className='flex flex-col h-full'>
-                             <h1 className='font-bold text-xl mb-6'>Sign Documents</h1>
+                             <h1 className='font-bold text-lg lg:text-xl mb-6'>Sign Documents</h1>
                             <p className='mb-4'>You're just one step away from completing your onboarding.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconDocument} alt='icon-document' className='w-9 h-9' />
@@ -463,7 +463,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                    {
                     action == "modalKYC13" && (
                         <div className='flex flex-col h-full'>
-                             <h1 className='font-bold text-xl mb-6'>Onboarding Completed</h1>
+                             <h1 className='font-bold text-lg lg:text-xl mb-6'>Onboarding Completed</h1>
                             <p className='mb-4'>You've successfully completed the USDY onboarding process.</p>
                             <div className='flex items-center mb-3 space-x-3'>
                                 <img src={iconSearch} alt='icon-document' className='w-9 h-9' />

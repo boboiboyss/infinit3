@@ -32,7 +32,10 @@ export default function Headers() {
 
   const isActive = (path) => {
     if (Array.isArray(path)) {
-      return path.some((p) => location.pathname === p || location.pathname.startsWith(`${p}/`));
+      return path.some(
+        (p) =>
+          location.pathname === p || location.pathname.startsWith(`${p}/`)
+      );
     }
     return location.pathname === path || location.pathname.startsWith(`${path}/`);
   };
@@ -82,7 +85,7 @@ export default function Headers() {
       </div>
 
       {isOpen && (
-        <nav className="bg-gray-100 lg:hidden">
+        <nav className="bg-gray-100 md:hidden">
           <ul className="space-y-2 px-4 py-2">
             {menuItems.map((item, index) => (
               <li key={index}>
@@ -93,7 +96,6 @@ export default function Headers() {
                       ? "bg-primary font-[1000]"
                       : "text-gray-700 hover:bg-primary"
                   }`}
-                  // onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
@@ -114,3 +116,4 @@ export default function Headers() {
     </header>
   );
 }
+

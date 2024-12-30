@@ -8,7 +8,7 @@ import iconTriangleRed from '../assets/icon-triangle-red.png'
 
 export default function PagePortofolio() {
     const [time, setTime] = useState('24h');
-    const [isOpenModal, setIsOpenModal] =  useState(false)
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     const openModal = () => setIsOpenModal(true);
     const closeModal = () => setIsOpenModal(false);
@@ -16,50 +16,57 @@ export default function PagePortofolio() {
     const timeOptions = ['24h', '7D', '30D', '90D', 'ALL'];
 
     return (
-        <div className="h-min-full">
+        <div className="min-h-screen p-4 md:p-8 bg-gray-50">
             <h1 className="text-2xl font-bold mb-5">Portofolio</h1>
 
-            <div className="space-y-2 flex flex-col">
-                <div className="md:flex items-center justify-between mb-4">
-                    <div className="flex flex-col space-y-2">
-                        <p className="font-semibold">Current Balance</p>
-                        <p className="md:text-3xl font-semibold">$100,000.00</p>
+            <div className="space-y-6">
+                <div className="md:flex items-center justify-between mb-6">
+                    <div className="space-y-2">
+                        <p className="font-semibold text-gray-700">Current Balance</p>
+                        <p className="text-2xl md:text-3xl font-bold">$100,000.00</p>
                         <div className="flex items-center space-x-2">
-                           <p className={time === "24h" ? "text-[#79EA86]" : "text-[#e75757]"}>{time === '24h' ? "+$200.00 (20%)" : "-$200.00 (20%)"}</p>
-                            <p className="bg-[#E9ECEF] text-black p-[3px] rounded-md font-semibold">{time}</p>
+                            <p className={time === "24h" ? "text-green-500" : "text-red-500"}>
+                                {time === '24h' ? "+$200.00 (20%)" : "-$200.00 (20%)"}
+                            </p>
+                            <p className="bg-gray-200 text-black px-2 py-1 rounded-md font-semibold">
+                                {time}
+                            </p>
                         </div>
                     </div>
-                    <div className="md:flex space-y-3 item-center w-2/3 md:space-x-6 md:space-y-0 xl:space-x-16">
-                        <div className={`${time === "24h" ? "bg-[#79EA86]" : "bg-[#e75757]"} p-5 text-white  rounded-lg w-full flex items-center justify-between`}>
-                            <div className="flex flex-col space-y-3">
-                                <p className="text-2xl text-white">{time === "24h" ? "+$1,743.96" : "-$1,743.96"}</p>
-                                <p>Performance Today</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-2/3">
+                        {['Performance Today', 'Overall Return'].map((title, index) => (
+                            <div
+                                key={index}
+                                className={`${
+                                    time === "24h" ? "bg-green-500" : "bg-red-500"
+                                } p-5 text-white rounded-lg flex items-center justify-between`}
+                            >
+                                <div className="space-y-2">
+                                    <p className="text-2xl">
+                                        {time === "24h" ? "+$1,743.96" : "-$1,743.96"}
+                                    </p>
+                                    <p>{title}</p>
+                                </div>
+                                <div className="text-2xl">
+                                    {time === "24h" ? "+1.14%" : "-1.14%"}
+                                </div>
                             </div>
-                            <div className="text-2xl">{ time === "24h" ? "+1.14%" : "-1.14%"}</div>
-
-                        </div>
-
-                        <div className={`${time === "24h" ? "bg-[#79EA86]" : "bg-[#e75757]"} p-5 text-white rounded-lg w-full flex items-center justify-between`}>
-                            <div className="flex flex-col space-y-3">
-                                <p className="text-2xl text-white">{time === "24h" ? "+$1,743.96" : "-$1,743.96"}</p>
-                                <p>Overall Return</p>
-                            </div>
-                            <div className="text-2xl">{ time === "24h" ? "+1.14%" : "-1.14%"}</div>
-                        </div>
+                        ))}
                     </div>
                 </div>
-                <div className="flex flex-col space-y-6 mb-3">
+
+                <div className="space-y-6">
                     <div className="flex items-center justify-between">
-                        <h1 className="text-lg font-semibold">Chart</h1>
-                        <div className="p-[4px] bg-black  text-white space-x-2 rounded-lg">
+                        <h2 className="text-lg font-semibold">Chart</h2>
+                        <div className="bg-black text-white rounded-lg p-1 space-x-2">
                             {timeOptions.map((option) => (
                                 <button
                                     key={option}
                                     onClick={() => setTime(option)}
-                                    className={`p-1 rounded-md font-semibold ${
+                                    className={`px-3 py-1 rounded-md font-semibold ${
                                         time === option
-                                            ? 'bg-[#E9ECEF] text-black'
-                                            : 'text-white'              
+                                            ? "bg-gray-200 text-black"
+                                            : "hover:bg-gray-700"
                                     }`}
                                 >
                                     {option}
@@ -67,103 +74,90 @@ export default function PagePortofolio() {
                             ))}
                         </div>
                     </div>
-                    <div onClick={openModal} className="hover:cursor-pointer">
-                    <img src={iconFullscreen} alt="icon-fullscreen" className="h-9 w-19 absolute right-12 p-1"/>
+                    <div onClick={openModal} className="relative hover:cursor-pointer">
+                        <img
+                            src={iconFullscreen}
+                            alt="icon-fullscreen"
+                            className="absolute top-2 right-2 h-6 w-6 p-1"
+                        />
                     </div>
-                   <div className="flex items-center justify-center">
-                       <img src={chart} alt="chart" className=" w-[300px] h-[400px] sm:h-[400px] sm:w-[600px]" /> 
-                   </div>
+                    <div className="flex justify-center">
+                        <img
+                            src={chart}
+                            alt="chart"
+                            className="w-full max-w-lg md:max-w-2xl"
+                        />
+                    </div>
                 </div>
-                <div className="asset">
-                    <h1 className="text-lg font-semibold">Assets</h1>
-                    <table class="table-auto w-full text-center">
-                        <thead className="border-y border-black ">
-                            <tr>
-                                <th>Assets</th>
-                                <th>24H Price</th>
-                                <th>Balance</th>
-                                <th>Avg. Buy Price</th>
-                                <th>Profit/Loss</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="font-semibold">
-                                <td>
-                                    <div className="flex items-center justify-center space-x-2">
-                                        <div className="border border-black rounded-full">
-                                        <img src={iconEthereum} alt="icon-ethereum" className="h-10 w-10" />
 
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <span className="font-semibold">Asset Name</span>
-                                            <span className="text-left">AN</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="flex flex-col items-center justify-center text-center">
-                                    <span>$14,000.00</span>
-                                    <div className="flex items-center  space-x-1">
-                                            <img src={iconTriangleGreen} alt="icon-triangle-green" className="h-3 w-3" />
-                                            <span className="text-[#79EA86] text-sm">5.2%</span>
-                                    </div>
-                                    </div>
-                                </td>
-                                <td>$14,000.00</td>
-                                <td>$14,000.00</td>
-                                <td>
-                                    <div className="flex flex-col items-center justify-center text-center">
-                                    <span className="text-[#79EA86]">+$14,000.00</span>
-                                    <div className="flex items-center  space-x-1">
-                                            <img src={iconTriangleGreen} alt="icon-triangle-green" className="h-3 w-3" />
-                                            <span className="text-[#79EA86] text-sm">5.2%</span>
-                                    </div>
-                                    </div>
-                                </td>
-                                <td>+$14,000.00</td>
-                            </tr>
-                            <tr className="font-semibold">
-                                <td>
-                                    <div className="flex items-center justify-center space-x-2">
-                                        <div className="border border-black rounded-full">
-                                        <img src={iconEthereum} alt="icon-ethereum" className="h-10 w-10" />
-
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <span className="font-semibold">Asset Name</span>
-                                            <span className="text-left">AN</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="flex flex-col items-center justify-center text-center">
-                                    <span>$14,000.00</span>
-                                    <div className="flex items-center  space-x-1">
-                                            <img src={iconTriangleRed} alt="icon-triangle-green" className="h-3 w-3 rotate-180" />
-                                            <span className="text-[#e75757] text-sm">5.2%</span>
-                                    </div>
-                                    </div>
-                                </td>
-                                <td>$14,000.00</td>
-                                <td>$14,000.00</td>
-                                <td>
-                                    <div className="flex flex-col items-center justify-center text-center">
-                                    <span className="text-[#e75757]">+$14,000.00</span>
-                                    <div className="flex items-center  space-x-1">
-                                            <img src={iconTriangleRed} alt="icon-triangle-green" className="h-3 w-3 rotate-180" />
-                                            <span className="text-[#e75757] text-sm">5.2%</span>
-                                    </div>
-                                    </div>
-                                </td>
-                                <td>+$14,000.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                <div>
+                    <h2 className="text-lg font-semibold">Assets</h2>
+                    <div className="overflow-x-auto w-full">
+                        <table className="table-auto w-full text-left">
+                            <thead className="border-b border-black">
+                                <tr>
+                                    <th className="px-2 py-2 min-w-[120px]">Assets</th>
+                                    <th className="px-2 py-2 min-w-[100px]">24H Price</th>
+                                    <th className="px-2 py-2 min-w-[100px]">Balance</th>
+                                    <th className="px-2 py-2 min-w-[120px]">Avg. Buy Price</th>
+                                    <th className="px-2 py-2 min-w-[120px]">Profit/Loss</th>
+                                    <th className="px-2 py-2 min-w-[100px]">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[1, 2].map((item) => (
+                                    <tr
+                                        key={item}
+                                        className="font-semibold hover:bg-gray-100"
+                                    >
+                                        <td className="px-2 py-4">
+                                            <div className="flex items-center space-x-2">
+                                                <img
+                                                    src={iconEthereum}
+                                                    alt="icon-ethereum"
+                                                    className="h-10 w-10 border rounded-full"
+                                                />
+                                                <div>
+                                                    <p className="font-semibold">Asset Name</p>
+                                                    <p>AN</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-2 py-4 space-y-1">
+                                            <p>$14,000.00</p>
+                                            <div className="flex items-center text-green-500">
+                                                <img
+                                                    src={iconTriangleGreen}
+                                                    alt="icon-triangle-green"
+                                                    className="h-3 w-3"
+                                                />
+                                                <p>+5.2%</p>
+                                            </div>
+                                        </td>
+                                        <td className="px-2 py-4">$14,000.00</td>
+                                        <td className="px-2 py-4">$14,000.00</td>
+                                        <td className="px-2 py-4 space-y-1">
+                                            <p className="text-green-500">+$14,000.00</p>
+                                            <div className="flex items-center text-green-500">
+                                                <img
+                                                    src={iconTriangleGreen}
+                                                    alt="icon-triangle-green"
+                                                    className="h-3 w-3"
+                                                />
+                                                <p>+5.2%</p>
+                                            </div>
+                                        </td>
+                                        <td className="px-2 py-4">$14,000.00</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
             </div>
             <ModalChart isOpen={isOpenModal} onClose={closeModal} />
         </div>
     );
 }
+
