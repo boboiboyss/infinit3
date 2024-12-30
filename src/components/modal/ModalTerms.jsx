@@ -37,49 +37,51 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative rounded-xl shadow-lg w-1/2 bg-[#C5D2F7]">
-        <div className="flex">
-          <div className="px-4 py-6 border-r border-black w-1/3">
-            <img src={logo} alt="logo" className="h-16" />
-            <h1 className="text-xl font-bold mb-4">Terms & Conditions</h1>
+  <div className="relative rounded-xl shadow-lg bg-[#C5D2F7] sm:w-full md:w-3/4 lg:w-1/2">
+    <div className="flex flex-col md:flex-row">
+      <div className="px-4 py-6 border-b md:border-r md:border-b-0 border-black md:w-1/3">
+        <img src={logo} alt="logo" className="h-16" />
+        <h1 className="text-xl font-bold mb-4 text-center md:text-left">Terms & Conditions</h1>
+        <p className="mb-4 text-center md:text-left">
+          {action === "modalTerms2"
+            ? "Ownership and Asset Rights"
+            : action === "modalTerms3"
+            ? "Transparency and Public Information"
+            : action === "modalTerms4"
+            ? "Technology and Blockchain Security"
+            : action === "modalTerms5"
+            ? "Risks and Disclaimers"
+            : action === "modalTerms6"
+            ? "Agreement Confirmation"
+            : "Legality and Regulatory Compliance"}
+        </p>
+      </div>
 
-            <p className="mb-4">
-            {action === "modalTerms2"
-                ? "Ownership and Asset Rights"
-                : action === "modalTerms3"
-                ? "Transparency and Public Information"
-                : action === "modalTerms4"
-                ? "Technology and Blockchain Security"
-                : action === "modalTerms5"
-                ? "Risks and Disclaimers"
-                : action == "modalTerms6"
-                ? "Agreement Confirmation"
-                : "Legality and Regulatory Compliance"}
-            </p>
-
-
-          </div>
-
-          <div className="w-2/3 h-[460px]">
-            <div className='content p-8 h-full flex flex-col'>
-                {
-                    action == "modalTerms1" && (
-                        <div className='flex flex-col h-full'>
-                            <p className='mb-4 text-justify'>Asset tokenization must comply with the laws and regulations applicable in the relevant jurisdiction. Asset owners must adhere to legal framework governing securities, digital assets, and investor protection</p>
-                            <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconLegal} alt='icon-legal' className='w-9 h-9' />
-                                <span>The owner must ensure that the asset being tokenized has a clear legal status and is free from disputes, cush as liens, third-party claims, or ownership issues.</span>
-                            </div>
-                            <div className='flex items-center mb-3 space-x-3'>
-                                <img src={iconHibernate} alt='icon-hibernate' className='w-9 h-9' />
-                                <span>If the tokenized asset is regulated by a spesific authority (e.g., Securities and Exchange Commission), the tokenization process must receive proper approval or licenses.</span>
-                            </div>
-                            <div className='flex justify-center items-center mt-auto'>
-                             <button onClick={nextModalTerms2} className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold">Continue</button>
-                             </div>
-                        </div>
-                    )
-                }
+      <div className="w-full md:w-2/3 lg:h-[460px] h-auto overflow-y-auto">
+        <div className="content p-4 lg:p-8 flex flex-col">
+                {action === "modalTerms1" && (
+                    <div className="flex flex-col h-full">
+                    <p className="mb-4 text-justify">
+                        Asset tokenization must comply with the laws and regulations applicable in the relevant jurisdiction...
+                    </p>
+                    <div className="flex items-center mb-3 space-x-3">
+                        <img src={iconLegal} alt="icon-legal" className="w-9 h-9" />
+                        <span>The owner must ensure that the asset being tokenized has a clear legal status...</span>
+                    </div>
+                    <div className="flex items-center mb-3 space-x-3">
+                        <img src={iconHibernate} alt="icon-hibernate" className="w-9 h-9" />
+                        <span>If the tokenized asset is regulated by a specific authority...</span>
+                    </div>
+                    <div className="flex justify-center items-center mt-auto">
+                        <button
+                        onClick={nextModalTerms2}
+                        className="bg-black text-white py-4 px-12 text-center rounded-xl text-sm font-semibold"
+                        >
+                        Continue
+                        </button>
+                    </div>
+                    </div>
+                )}
                 {
                     action == "modalTerms2" && (
                         <div className='flex flex-col h-full'>

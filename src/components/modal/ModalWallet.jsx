@@ -47,7 +47,7 @@ const ModalWallet = ({ isOpen, onClose, openWalletConnected, setSelectedWallet }
 
           <div className="w-full md:w-2/3 p-4 md:p-6">
             <div className='flex justify-between items-center mb-4'>
-              <h1 className='text-2xl font-bold'>Available Wallets (6)</h1>
+              <h1 className='lg:text-2xl font-bold text-xl'>Available Wallets (6)</h1>
               <button onClick={onClose} className="text-black hover:text-gray-600 focus:outline-none absolute right-2 top-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

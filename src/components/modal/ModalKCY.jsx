@@ -41,50 +41,55 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative rounded-xl shadow-lg w-1/2 bg-[#C5D2F7]">
-        <div className="flex">
-          <div className="px-4 py-6 border-r border-black w-1/3">
-            <img src={logo} alt="logo" className="h-16" />
-            <h1 className="text-xl font-bold mb-4">Indentity Verification</h1>
+    <div className="relative rounded-xl shadow-lg w-[90%] sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[40%] bg-[#C5D2F7] overflow-y-auto">
+    <div className="flex flex-col lg:flex-row">
+      <div className="px-4 py-6 border-b lg:border-b-0 lg:border-r border-black w-full lg:w-1/3">
+        <img src={logo} alt="logo" className="h-16" />
+        <h1 className="text-lg lg:text-xl font-bold mb-4 text-center lg:text-left">Identity Verification</h1>
+        <p className="mb-4 text-center lg:text-left">
+          {action === "modalKYC11"
+            ? "Add Your Wallet"
+            : action === "modalKYC12"
+            ? "Sign Documents"
+            : action === "modalKYC13"
+            ? "Completed"
+            : "Verify Your Identity"}
+        </p>
+      </div>
 
-            <p className="mb-4">
-            {action === "modalKYC11"
-                ? "Add Your Wallet"
-                : action === "modalKYC12"
-                ? "Sign Documents"
-                : action === "modalKYC13"
-                ? "Completed"
-                : "Verify Your Identity"}
-            </p>
-
-
-          </div>
-
-          <div className={`w-2/3 ${action === 'modalKYC8' ? 'h-auto' : 'h-[480px]'}`}>
-            <div className='content p-8 h-full flex flex-col'>
-                {
-                  action == 'modalKYC1' && (
-                        <>
-                            <div className='h-full flex flex-col'>
-                    <h1 className='font-bold text-xl mb-6'>Eligibility Criteria</h1>
-                    <p className='mb-6 text-justify'>To qualitfy for the purchase of an Asset, you (or your organization, as applicable) must meet the following requirements:</p>
-                    <div className='space-y-2'>
-                        <div className='flex items-center space-x-2'>
-                            <img src={globe} alt='globe' className='w-10 h-10' />
-                            <p>Must not be located in, or a resident of, the United States or any other jurisdiction with restricted access.</p>
-                        </div>
-                        <div className='flex items-center space-x-2'>
-                            <img src={customer} alt='globe' className='w-10 h-10' />
-                            <p>Must not be located in, or a resident of, the United States or any other jurisdiction with restricted access.</p>
-                        </div>
-                    </div>
-                    <div className='flex justify-center items-center mt-auto'>
-                        <button onClick={nextModalKYC2} className="bg-black text-white py-3 px-16 text-center rounded-xl font-semibold">Continue</button>
-                    </div>
+      <div className={`w-full lg:w-2/3 h-auto lg:${action === 'modalKYC8' ? 'h-auto' : 'h-[500px]'}`}>
+        <div className="content p-4 lg:p-8 h-full flex flex-col">
+          {action === "modalKYC1" && (
+            <>
+              <h1 className="font-bold text-lg lg:text-xl mb-6">Eligibility Criteria</h1>
+              <p className="mb-6 text-justify">
+                To qualify for the purchase of an Asset, you (or your organization, as applicable) must meet the following requirements:
+              </p>
+              <div className="space-y-4 mb-3">
+                <div className="flex items-center space-x-4">
+                  <img src={globe} alt="globe" className="w-8 h-8 lg:w-10 lg:h-10" />
+                  <p className="text-sm lg:text-base">
+                    Must not be located in, or a resident of, the United States or any other jurisdiction with restricted access.
+                  </p>
                 </div>
-                        </>
-                  )
-                }
+                <div className="flex items-center space-x-4">
+                  <img src={customer} alt="customer" className="w-8 h-8 lg:w-10 lg:h-10" />
+                  <p className="text-sm lg:text-base">
+                    Must not be located in, or a resident of, the United States or any other jurisdiction with restricted access.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-center items-center mt-auto">
+                <button
+                  onClick={nextModalKYC2}
+                  className="bg-black text-white py-3 px-8 lg:px-16 text-center rounded-xl font-semibold"
+                >
+                  Continue
+                </button>
+              </div>
+            </>
+          )}
+
 
                 {
                   action=="modalKYC2" && (
@@ -139,7 +144,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                 <option value="4">4</option>
                             </select>
                         </div>
-                         <span className='text-sm'>Non-binding. This information allows us to better understand and serve our clients.</span>
+                         <span className='text-sm mb-3'>Non-binding. This information allows us to better understand and serve our clients.</span>
                          
                          <div className='flex justify-center items-center mt-auto'>
                             <button onClick={nextModalKYC3} className="bg-black text-white py-4 px-14 text-center rounded-xl text-sm m-auto font-semibold">Start KYC</button>
@@ -191,7 +196,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                    action=="modalKYC4" && (
                     <div className='h-full flex flex-col'>
                         <h1 className='font-bold text-xl mb-4'>What is the country of your residence ?</h1>
-                          <div class="relative w-full rounded-xl">
+                          <div class="relative w-full rounded-xl mb-3">
                             <p className='text-justify'>This allows us to identify the most appropriate method to verify your identity.</p>
                             <select
                                 id="last-name"
@@ -239,7 +244,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         <div className='h-full flex flex-col'>
                               <h1 className='font-bold text-xl mb-6'>Passport</h1>
                               <p className='mb-4'>Take a clear photo of your entire passport portrait page.</p>
-                              <div className='w-full flex items-center justify-center p-20 border border-black rounded-lg'>
+                              <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
@@ -253,7 +258,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         <div className='h-full flex flex-col'>
                               <h1 className='font-bold text-xl mb-6'>National ID</h1>
                               <p className='mb-4'>Take a clear photo of your entire passport portrait page.</p>
-                              <div className='w-full flex items-center justify-center p-20 border border-black rounded-lg'>
+                              <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
@@ -267,7 +272,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                         <div className='h-full flex flex-col'>
                               <h1 className='font-bold text-xl mb-6'>Driver License</h1>
                               <p className='mb-4'>Take a clear photo of your entire passport portrait page.</p>
-                              <div className='w-full flex items-center justify-center p-20 border border-black rounded-lg'>
+                              <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconUploadPhoto} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
@@ -281,7 +286,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                      <div className='h-full flex flex-col'>
                               <h1 className='font-bold text-xl mb-6'>Let's make sure you're you</h1>
                               <p className='mb-4'>Position yourself in the center of the camera and then more your face left and right to show both sides</p>
-                              <div className='w-full flex items-center justify-center p-20 border border-black rounded-lg'>
+                              <div className='w-full flex items-center justify-center mb-3 p-10 lg:p-20 border border-black rounded-lg'>
                                     <img src={iconFace} alt='icon-upload-photo' className=' w-[70px] h-[70px]' />
                               </div>
                                <div className='flex justify-center items-center mt-auto'>
@@ -358,7 +363,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                                         class="peer w-full border border-gray-300 rounded-md px-3 pt-3 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700"
                                     />
                                  </div>
-                                <div className='flex justify-center items-center mt-8'>
+                                <div className='flex justify-center items-center mt-auto'>
                                 <button onClick={nextModalKYC9} className="bg-black text-white py-3 px-16 text-center rounded-xl font-semibold">Continue</button>
                                 </div>
                                         
@@ -385,7 +390,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
                             <h1 className='font-bold text-xl mb-6'>Verification Materials Submitted</h1>
                             <p className='text-justify'>Thank you for completing the verification process. We will notify you via email once your submission has been reviewed. In the meantime, you may proceed with the wallet verification.</p>
 
-                            <div className='mt-14 w-full rounded-xl p-4 bg-white text-black border-2 border-black'>
+                            <div className='mt-14 w-full rounded-xl p-4 bg-white text-black border-2 border-black mb-3'>
                                 <div className='flex items-center justify-between'>
                                    <div className='flex items-center space-x-3'>
                                     <img src={product} alt='product' className='w-16 h-16 rounded-full' />
@@ -483,7 +488,7 @@ const ModalKYC = ({ isOpen, onClose, openModalTerms }) => {
           </div>
 
 
-        </div>
+    </div>
       </div>
     </div>
   );
