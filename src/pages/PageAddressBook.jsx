@@ -70,23 +70,23 @@ export default function PageAddressBook() {
                 <img
                   src={wallet.image}
                   alt={`${wallet.name} Icon`}
-                  className="w-20 h-20 rounded-full md:w-16 md:h-16 object-cover xl:w-20 xl:h-20"
+                  className="w-14 h-14 rounded-full md:w-16 md:h-16 object-cover xl:w-20 xl:h-20"
                 />
                 <div className="h-full border-l-2 border-black"></div>
                 <div className="flex flex-col justify-between w-full">
-                  <p className="text-xl md:text-lg xl:text-xl font-bold text-gray-800 mb-3">{wallet.name}</p>
+                  <p className="text-base md:text-lg xl:text-xl font-bold text-gray-800 mb-3">{wallet.name}</p>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="font-semibold">Wallet Name</span>
-                      <span>{wallet.walletName}</span>
+                      <span className="text-sm md:text-base font-semibold">Wallet Name</span>
+                      <span className='text-sm md:text-base'>{wallet.walletName}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-semibold">Public Address</span>
-                      <span>{wallet.publicAddress}</span>
+                      <span className="font-semibold text-sm md:text-base">Public Address</span>
+                      <span className='text-sm md:text-base'>{wallet.publicAddress}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-semibold">Balance</span>
-                      <span>{wallet.balance}</span>
+                      <span className="font-semibold text-sm md:text-base">Balance</span>
+                      <span className='text-sm md:text-base'>{wallet.balance}</span>
                     </div>
                   </div>
                 </div>

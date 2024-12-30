@@ -18,120 +18,94 @@ import iconLogout from '../assets/icon-logout.png'
 
 export default function Sidebar() {
   const location = useLocation();
-  const {id} = useParams();
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem("isLoggedIn");
+    Navigate("/login");
+  };
 
-    Navigate('/login');
-  }
-
+  const sidebarData = [
+    {
+      to: "/product",
+      imgSrc: productSidebar,
+      label: "Product",
+      pathMatch: ["/product", `/product/${id}`, "/"],
+    },
+    {
+      to: "/address-book",
+      imgSrc: addressSidebar,
+      label: "Address Book",
+      pathMatch: ["/address-book"],
+    },
+    {
+      to: "/bank-details",
+      imgSrc: bankSidebar,
+      label: "Bank Details",
+      pathMatch: ["/bank-details", "/add-bank-account"],
+    },
+    {
+      to: "/documents",
+      imgSrc: documentSidebar,
+      label: "Documents",
+      pathMatch: ["/documents"],
+    },
+    {
+      to: "/account-settings",
+      imgSrc: accountSidebar,
+      label: "Account Settings",
+      pathMatch: ["/account-settings"],
+    },
+    {
+      to: "/contact-support",
+      imgSrc: contactSidebar,
+      label: "Contact Support",
+      pathMatch: ["/contact-support"],
+    },
+    {
+      to: "/portofolio",
+      imgSrc: portoSidebar,
+      label: "Portofolio",
+      pathMatch: ["/portofolio"],
+    },
+    {
+      to: "/transaction",
+      imgSrc: transactionSidebar,
+      label: "Transaction",
+      pathMatch: ["/transaction", `/transaction/${id}`],
+    },
+  ];
 
   return (
     <div className="hidden lg:block px-4 w-[260px]">
       <div className="flex-1">
-        <nav className="grid items-start text-md font-medium  border-r bg-muted/40 border-gray-900">
-          <Link
-            to="/product"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname === "/product" || location.pathname === `/product/${id}` || location.pathname === "/"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={productSidebar} alt="product-sidebar" className="h-8"  />
-            Product
-          </Link>
-          <Link
-            to="/address-book"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname === "/address-book"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={addressSidebar} alt="address-sidebar" className="h-8" />
-            Address Book
-          </Link>
-          <Link
-            to="/bank-details"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/bank-details" || location.pathname == "/add-bank-account"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={bankSidebar} alt="bank-sidebar" className="h-8" />
-             Bank Details
-          </Link>
-          <Link
-            to="/documents"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/documents"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={documentSidebar} alt="document-sidebar" className="h-8" />
-             Documents
-          </Link>
-          <Link
-            to="/account-settings"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/account-settings"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={accountSidebar} alt="account-sidebar" className="h-8" />
-             Account Settings
-          </Link>
-          <Link
-            to="/contact-support"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/contact-support"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={contactSidebar} alt="contact-sidebar" className="h-8" />
-             Contact Support
-          </Link>
-          <Link
-            to="/portofolio"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/portofolio"
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={portoSidebar} alt="contact-sidebar" className="h-8" />
-             Portofolio
-          </Link>
-
-          <Link
-            to="/transaction"
-            className={`flex items-center gap-3 rounded-xl py-3 ${
-              location.pathname == "/transaction" || location.pathname== `/transaction/${id}`
-                ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
-                : "text-muted-foreground"
-            } transition-all hover:text-primary font-bold`}
-          >
-            <img src={transactionSidebar} alt="contact-sidebar" className="h-8" />
-             Transaction
-          </Link>
-
+        <nav className="grid items-start text-md font-medium border-r bg-muted/40 border-gray-900">
+          {sidebarData.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={`flex items-center gap-3 rounded-xl py-3 ${
+                item.pathMatch.includes(location.pathname)
+                  ? "bg-[#C5D2F7] text-primary pl-6 mr-3"
+                  : "text-muted-foreground"
+              } transition-all hover:text-primary font-bold`}
+            >
+              <img src={item.imgSrc} alt={`${item.label}-sidebar`} className="h-8" />
+              {item.label}
+            </Link>
+          ))}
+         
           <Link
             to="/"
             onClick={handleLogout}
-            className={`flex items-center gap-3 rounded-xl py-3 transition-all hover:text-primary font-bold`}
+            className="flex items-center gap-3 rounded-xl py-3 transition-all hover:text-primary font-bold"
           >
-            <img src={iconLogout} alt="contact-sidebar" className="h-8" />
-             Logout
+            <img src={iconLogout} alt="icon-logout" className="h-8" />
+            Logout
           </Link>
         </nav>
       </div>
-
     </div>
   );
 }
