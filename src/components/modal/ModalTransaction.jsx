@@ -52,9 +52,9 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone, setSelectedWalle
   <div
     className={`relative rounded-lg shadow-lg bg-[#E096AA] ${
       transactionStep === 0
-        ? "p-4 sm:p-6 md:p-8 w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/3"
-        : "p-8 sm:p-12 md:p-14 lg:p-16 w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/4"
-    }`}
+        ? "p-4 max-[444px]:w-11/12 sm:w-[500px]"
+        : "p-6 max-[600px]:w-[300px] sm:w-[400px]"
+    } h-[480px] overflow-y-auto`}
   >
     <button
       onClick={onClose}
@@ -100,7 +100,7 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone, setSelectedWalle
                       <img
                         src={wallet?.image}
                         alt="Product Icon"
-                        className="w-16 h-16 rounded-full object-cover"
+                        className=" w-10 h-10 sm:w-16 sm:h-16 rounded-full object-cover"
                       />
 
                       <div className="h-full border-l-2 border-black"></div>
@@ -111,12 +111,12 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone, setSelectedWalle
                             <span className="font-semibold">{wallet?.name}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="font-semibold">Wallet Name</span>
-                            <span>{wallet?.walletName}</span>
+                            <span className="font-semibold text-sm sm:text-base text-start">Wallet Name</span>
+                            <span className="text-sm sm:text-base">{wallet?.walletName}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="font-semibold">Public Address</span>
-                            <span>0x12345678987654321</span>
+                            <span className="font-semibold text-sm sm:text-base text-start">Public Address</span>
+                            <span className="text-sm sm:text-base">0x12345678987654321</span>
                           </div>
                         </div>
                       </div>
@@ -139,7 +139,7 @@ const ModalTransaction = ({ isOpen, onClose, isDone, setIsDone, setSelectedWalle
           <p className="text-xl font-bold">Transaction 1 of 2</p>
           {isOpened ? (
             <>
-              <p className="text-xl font-bold">USDT allowance Confirmed</p>
+              <p className="text-xl font-bold text-center">USDT allowance Confirmed</p>
               <p className="text-sm text-center">
                 A second transaction is required to complete your investment.
               </p>
