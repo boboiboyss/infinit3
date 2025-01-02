@@ -8,7 +8,7 @@ export default function RootLayout() {
       <Headers />
       <div className=" flex flex-1 overflow-auto px-6 pb-6 h-full">
         <Sidebar/> 
-        <main className="flex-1 bg-white block h-full ">
+        <main className="flex-1 bg-white block h-full overflow-x-auto ">
           <Outlet />
         </main>
       </div>

@@ -22,7 +22,7 @@ export default function Headers() {
   const menuItems = [
     { name: "Product", path: ["/product", "/", `/product/${id}`] },
     { name: "Address Book", path: "/address-book" },
-    { name: "Bank Details", path: ["/bank-details", "/add-bank-account"] },
+    // { name: "Bank Details", path: ["/bank-details", "/add-bank-account"] },
     { name: "Documents", path: "/documents" },
     { name: "Account Settings", path: "/account-settings" },
     { name: "Contact Support", path: "/contact-support" },
@@ -50,12 +50,12 @@ export default function Headers() {
           <img src={iconNotif} className="w-6 h-6" alt="Notification Icon" />
           <img
             src={profile}
-            className="w-10 h-10 rounded-full object-cover hidden lg:block"
+            className="w-10 h-10 rounded-full object-cover hidden md:block"
             alt="Profile"
           />
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-gray-700 focus:outline-none"
           >
             <svg
               className="w-6 h-6"

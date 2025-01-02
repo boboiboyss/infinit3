@@ -61,10 +61,10 @@ export default function PageTransaction() {
     };
 
     return (
-        <div className="min-h-full">
+        <div className="min-h-full w-full">
             <h1 className="text-2xl font-bold lg:mb-6">Transaction History</h1>
 
-            <div className="">
+            <div className="w-full">
                 <table className="w-full table-auto  overflow-x-auto text-center mt-8 mb-4 border-collapse border border-gray-300">
                     <thead className="border-y border-black bg-gray-100">
                         <tr className="text-sm lg:text-base">
@@ -74,7 +74,7 @@ export default function PageTransaction() {
                             <th className="py-2">Asset</th>
                             <th className=" py-2">Amount</th>
                             <th className=" py-2">Destination</th>
-                            <th className=" py-2">TxID</th>
+                            <th className=" py-2">Transaction Hash</th>
                             <th className=" py-2">Status</th>
                         </tr>
                     </thead>

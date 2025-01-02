@@ -39,12 +39,12 @@ export default function Sidebar() {
       label: "Address Book",
       pathMatch: ["/address-book"],
     },
-    {
-      to: "/bank-details",
-      imgSrc: bankSidebar,
-      label: "Bank Details",
-      pathMatch: ["/bank-details", "/add-bank-account"],
-    },
+    // {
+    //   to: "/bank-details",
+    //   imgSrc: bankSidebar,
+    //   label: "Bank Details",
+    //   pathMatch: ["/bank-details", "/add-bank-account"],
+    // },
     {
       to: "/documents",
       imgSrc: documentSidebar,
@@ -78,7 +78,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="hidden lg:block px-4 w-[260px]">
+    <div className="hidden md:block px-4 w-[260px]">
       <div className="flex-1">
         <nav className="grid items-start text-md font-medium border-r bg-muted/40 border-gray-900">
           {sidebarData.map((item) => (

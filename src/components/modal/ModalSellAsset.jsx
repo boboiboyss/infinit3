@@ -8,6 +8,7 @@ import defi from '../../assets/defiwallet.png';
 import wallet from '../../assets/walletconnect.png';
 import bitget from '../../assets/bitget.png';
 import { useNavigate } from "react-router-dom";
+import { ethers } from "ethers";
 
 const ModalSellAsset = ({ isOpen, onClose}) => {
   if (!isOpen) return null;

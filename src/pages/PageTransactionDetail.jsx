@@ -89,7 +89,7 @@ export default  function PageTransactionDetail() {
                     <p>{transDetail?.destination}</p>
                 </div>
                  <div className="flex items-center justify-between">
-                    <p className="font-semibold">TxID</p>
+                    <p className="font-semibold">Transaction Hash</p>
                     <p>{transDetail?.txid}</p>
                 </div>
              </div>

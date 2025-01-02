@@ -6,6 +6,7 @@ import iconEthereum from "../assets/icon-ethereum.png";
 import iconTriangleGreen from  '../assets/icon-triangle-green.png'
 import iconTriangleRed from '../assets/icon-triangle-red.png'
 
+const timeOptions = ['24h', '7D', '30D', '90D', 'ALL'];
 export default function PagePortofolio() {
     const [time, setTime] = useState('24h');
     const [isOpenModal, setIsOpenModal] = useState(false);
@@ -13,15 +14,13 @@ export default function PagePortofolio() {
     const openModal = () => setIsOpenModal(true);
     const closeModal = () => setIsOpenModal(false);
 
-    const timeOptions = ['24h', '7D', '30D', '90D', 'ALL'];
-
     return (
         <div className="min-h-screen p-4 md:p-8 bg-gray-50">
             <h1 className="text-2xl font-bold mb-5">Portofolio</h1>
 
             <div className="space-y-6">
                 <div className="md:flex items-center justify-between mb-6">
-                    <div className="space-y-2">
+                    <div className="space-y-2 mb-3">
                         <p className="font-semibold text-gray-700">Current Balance</p>
                         <p className="text-2xl md:text-3xl font-bold">$100,000.00</p>
                         <div className="flex items-center space-x-2">
@@ -56,14 +55,13 @@ export default function PagePortofolio() {
                 </div>
 
                 <div className="space-y-6">
-                    <div className="flex items-center justify-between">
-                        <h2 className="text-lg font-semibold">Chart</h2>
-                        <div className="bg-black text-white rounded-lg p-1 space-x-2">
+                    <div className="flex md:justify-end">
+                        <div className="bg-black text-white rounded-lg p-1 space-x-2 ">
                             {timeOptions.map((option) => (
                                 <button
                                     key={option}
                                     onClick={() => setTime(option)}
-                                    className={`px-3 py-1 rounded-md font-semibold ${
+                                    className={`px-3 py-1 rounded-md font-semibold text-sm md:text-base ${
                                         time === option
                                             ? "bg-gray-200 text-black"
                                             : "hover:bg-gray-700"
@@ -78,22 +76,23 @@ export default function PagePortofolio() {
                         <img
                             src={iconFullscreen}
                             alt="icon-fullscreen"
-                            className="absolute top-2 right-2 h-6 w-6 p-1"
+                            className="absolute  right-1 h-6 w-6 p-1"
                         />
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex flex-col space-y-2 justify-center">
+                        <h2 className="text-base md:text-lg font-semibold text-start">Chart</h2>
                         <img
                             src={chart}
                             alt="chart"
-                            className="w-full max-w-lg md:max-w-2xl"
+                            className="w-full max-w-lg md:max-w-2xl mx-auto"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <h2 className="text-lg font-semibold">Assets</h2>
+                    <h2 className="md:text-lg font-semibold">Assets</h2>
                     <div className="overflow-x-auto w-full">
-                        <table className="table-auto w-full text-left">
+                        <table className="table-auto w-full text-left text-sm md:text-base">
                             <thead className="border-b border-black">
                                 <tr>
                                     <th className="px-2 py-2 min-w-[120px]">Assets</th>

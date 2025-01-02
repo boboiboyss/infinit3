@@ -58,7 +58,7 @@ function App() {
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </Router>
+    </Router> 
   );
 }
 
