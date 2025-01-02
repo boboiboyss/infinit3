@@ -41,7 +41,7 @@ export default function Headers() {
   };
 
   return (
-    <header className="bg-white shadow mb-6">
+    <header className="bg-white shadow mb-6 sticky top-0 z-10">
       <div className="px-4 py-3 flex items-center justify-between">
         <Link to="/">
           <img src={logo} alt="Logo" className="h-16" />
@@ -85,7 +85,7 @@ export default function Headers() {
       </div>
 
       {isOpen && (
-        <nav className="bg-gray-100 md:hidden">
+        <nav className="bg-gray-100 lg:hidden">
           <ul className="space-y-2 px-4 py-2">
             {menuItems.map((item, index) => (
               <li key={index}>
@@ -96,6 +96,7 @@ export default function Headers() {
                       ? "bg-primary font-[1000]"
                       : "text-gray-700 hover:bg-primary"
                   }`}
+                  onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
