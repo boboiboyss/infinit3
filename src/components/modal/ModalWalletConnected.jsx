@@ -16,7 +16,7 @@ const ModalWalletConnected = ({ isOpen, onClose, openKYC, wallet }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative rounded-xl shadow-lg w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/2 bg-[#C5D2F7] h-auto max-h-[90vh] overflow-y-auto">
+      <div className="relative rounded-xl shadow-lg w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/2 bg-[#C5D2F7] ">
         <div className="flex flex-col md:flex-row">
           <div className="px-4 border-b md:border-b-0 md:border-r border-black w-full md:w-1/3">
             <img src={logo} alt="logo" className="h-16" />
@@ -72,7 +72,7 @@ const ModalWalletConnected = ({ isOpen, onClose, openKYC, wallet }) => {
                           openKYC();
                         }}
                         className="bg-black text-white p-3 sm:p-4 text-center rounded-lg w-full text-sm sm:text-base font-semibold"
-                      >Next: KYC
+                      >Next: KYB
                       </button>
                     </div>
 

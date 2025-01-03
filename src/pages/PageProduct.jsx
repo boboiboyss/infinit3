@@ -3,7 +3,7 @@ import ModalWallet from '../components/modal/ModalWallet';
 import ModalWalletConnected from '../components/modal/ModalWalletConnected';
 import { useNavigate } from 'react-router-dom';
 import product from '../assets/product.jpeg'
-import ModalKYC from '../components/modal/ModalKCY';
+import ModalKYB from '../components/modal/ModalKYB';
 import ModalTerms from '../components/modal/ModalTerms';
 import ModalTermsWD from '../components/modal/ModalTermsWD';
 
@@ -167,7 +167,7 @@ const handleDetailProduct = () => {
 
         <ModalWallet isOpen={isModal} onClose={closeModal} openWalletConnected={openModalWalletConnected} setSelectedWallet={setSelectedWallet}/>
         <ModalWalletConnected isOpen={isModalWalletConnectedOpen} onClose={closeModalWalletConnected} openKYC={() => setIsModalKYC(true)} wallet={selectedWallet} />
-        <ModalKYC isOpen={isModalKYC} onClose={closeModalKYC} openModalTerms={setIsModalTerms} />
+        <ModalKYB isOpen={isModalKYC} onClose={closeModalKYC} openModalTerms={setIsModalTerms} />
         <ModalTerms isOpen={isModalTerms} onClose={closeModalTerms} setBtnWD={setBtnWD} />
         <ModalTermsWD isOpen={isModalTermsWD} onClose={closeModalTermsWD} />
         

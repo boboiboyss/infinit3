@@ -57,8 +57,8 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
         </p>
       </div>
 
-      <div className="w-full md:w-2/3 lg:h-[460px] h-auto overflow-y-auto">
-        <div className="content p-4 lg:p-8 flex flex-col">
+      <div className="w-full md:w-2/3 lg:h-[460px]">
+        <div className="content p-4 lg:p-8 flex flex-col h-full">
                 {action === "modalTerms1" && (
                     <div className="flex flex-col h-full">
                     <p className="mb-4 text-justify">
@@ -70,7 +70,7 @@ const ModalTerms = ({ isOpen, onClose, setBtnWD }) => {
                     </div>
                     <div className="flex items-center mb-3 space-x-3">
                         <img src={iconHibernate} alt="icon-hibernate" className="w-9 h-9" />
-                        <span>If the tokenized asset is regulated by a specific authority...</span>
+                        <span>If the tokenized asset is regulated by a specific authority(e.g., Securities and Exchange Commission), the tokenization process must receive proper approval or licenses.</span>
                     </div>
                     <div className="flex justify-center items-center mt-auto">
                         <button
