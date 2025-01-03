@@ -41,13 +41,13 @@ function App() {
             <Route index element={<PageProduct />} />
             <Route path="product" element={<PageProduct />} />
             <Route path="address-book" element={<PageAddressBook />} />
-            <Route path="bank-details" element={<PageBankDetails />} />
+            {/* <Route path="bank-details" element={<PageBankDetails />} /> */}
             <Route path="documents" element={<PageDocuments />} />
             <Route path="account-settings" element={<PageAccountSettings />} />
             <Route path="contact-support" element={<PageContactSupport />} />
             <Route path="portofolio" element={<PagePortofolio />} />
             <Route path="transaction" element={<PageTransaction />} />
-            <Route path='add-bank-account' element={<PageAddBankAccount />} />
+            {/* <Route path='add-bank-account' element={<PageAddBankAccount />} /> */}
             <Route path='transaction/:id' element={<PageTransactionDetail />} />
             <Route path='product/:id' element={<PageProductDetail />} />
             

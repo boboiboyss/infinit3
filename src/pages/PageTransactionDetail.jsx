@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom"
+import iconCopy from '../assets/icon-copy.png'
+import iconCheck from '../assets/icon-check.png'
+import { useState } from "react";
 
 export default  function PageTransactionDetail() {
     const {id} = useParams();
-
-      const transactions = [
+    const transactions = [
         {
             id:1,
             time: "2024-12-17 18:00",
@@ -12,7 +14,7 @@ export default  function PageTransactionDetail() {
             asset: "BTC",
             amount: "0,00114612",
             destination: "1D3pb...je83g",
-            txid: "7592aa5...2999au",
+            transactionHash: "0xd1ade25ccd3d550a7eb532ac759cac7be09c271",
             status: "Completed",
             statusColor: "text-green-500",
         },
@@ -24,7 +26,7 @@ export default  function PageTransactionDetail() {
             asset: "ETH",
             amount: "0,00114612",
             destination: "1D3pb...je83g",
-            txid: "7592aa5...2999au",
+            transactionHash: "0xd1ade25ccd3d550a7eb532ac759cac7be09c271",
             status: "Pending",
             statusColor: "text-yellow-500",
         },
@@ -48,13 +50,26 @@ export default  function PageTransactionDetail() {
             asset: "USDT",
             amount: "0,00114612",
             destination: "1D3pb...je83g",
-            txid: "7592aa5...2999au",
+            transactionHash: "0xd1ade25ccd3d550a7eb532ac759cac7be09c271",
             status: "Cancelled",
             statusColor: "text-red-500",
         },
     ];
 
     const transDetail = transactions.find(trx => trx.id === +id);
+
+    const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(transDetail?.transactionHash);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      console.error("Gagal menyalin teks: ", err);
+    }
+  };
+
 
     return (
         <div className="min-h-full">
@@ -63,6 +78,15 @@ export default  function PageTransactionDetail() {
                 <div className="flex items-center justify-between">
                     <p className="font-semibold">Transaction Number</p>
                     <p>{'#0102030405'}</p>
+                </div>
+                <div className="flex items-center justify-between">
+                    <p className="font-semibold">Transaction Hash</p>
+                    <div className="flex items-center space-x-2">
+                         <p className=" text-right">{transDetail?.transactionHash}</p>
+                         {copied ? (
+                            <img src={iconCheck} alt="icon-check" className="w-4 h-4 hover:cursor-pointer"/>
+                         ): <img src={iconCopy} alt="icon-copy" className="w-4 h-4 hover:cursor-pointer" onClick={handleCopy} />}
+                    </div>
                 </div>
                  <div className="flex items-center justify-between">
                     <p className="font-semibold">Status</p>
@@ -88,10 +112,7 @@ export default  function PageTransactionDetail() {
                     <p className="font-semibold">Destination</p>
                     <p>{transDetail?.destination}</p>
                 </div>
-                 <div className="flex items-center justify-between">
-                    <p className="font-semibold">Transaction Hash</p>
-                    <p>{transDetail?.txid}</p>
-                </div>
+               
              </div>
         </div>
     )
